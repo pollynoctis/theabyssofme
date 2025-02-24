@@ -34,7 +34,7 @@ public class SaveSystemNew : MonoBehaviour
             string filePath = Path.Combine(savePath, "save.txt");
             if (!File.Exists(filePath))
             {
-                File.WriteAllText(filePath, "Start"); 
+                File.WriteAllText(filePath, "Start -5.11 0"); 
             }
         }
         LoadCheckpoint();
@@ -61,8 +61,8 @@ public class SaveSystemNew : MonoBehaviour
             Debug.Log("Loaded: " + checkpointData);
             debugTextThree.text = "(load checkpoint void) game loaded" + checkpointData;
             Debug.Log(checkpointPosition);
-            string[] kuku = checkpointData.Split(" ");
-            LoadPlayerPosition(new Vector2(float.Parse(kuku[1]), float.Parse(kuku[2])));
+            string[] positionFromText = checkpointData.Split(" ");
+            LoadPlayerPosition(new Vector2(float.Parse(positionFromText[1]), float.Parse(positionFromText[2])));
         }
         return "Start";
     }
