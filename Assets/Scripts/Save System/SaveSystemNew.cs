@@ -43,9 +43,9 @@ public class SaveSystemNew : MonoBehaviour
     public void SaveCheckpoint(string checkpointName)
     {
         //debugging part
-        debugTextOne.text = "Saving checkpoint: " + checkpointName;
+        /*debugTextOne.text = "Saving checkpoint: " + checkpointName;
         Debug.Log("saving checkpoint: " + checkpointName);
-        Debug.Log(checkpointPosition);
+        Debug.Log(checkpointPosition);*/
         
         //actual coding part
         string filePath = Path.Combine(savePath, "save.txt");
@@ -56,11 +56,10 @@ public class SaveSystemNew : MonoBehaviour
         string filePath = Path.Combine(savePath, "save.txt");
         if (File.Exists(filePath))
         {
-            
             string checkpointData = File.ReadAllText(filePath);
-            Debug.Log("Loaded: " + checkpointData);
-            debugTextThree.text = "(load checkpoint void) game loaded" + checkpointData;
-            Debug.Log(checkpointPosition);
+            //Debug.Log("Loaded: " + checkpointData);
+            //debugTextThree.text = "(load checkpoint void) game loaded" + checkpointData;
+            //Debug.Log(checkpointPosition);
             string[] positionFromText = checkpointData.Split(" ");
             LoadPlayerPosition(new Vector2(float.Parse(positionFromText[1]), float.Parse(positionFromText[2])));
         }
