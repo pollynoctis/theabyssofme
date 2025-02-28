@@ -3,16 +3,25 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+// ReSharper disable All
 
 public class InventorySlotScript : MonoBehaviour
 {
-    public InventoryManager inventoryManager;
-    public Image inspectImage, inspectEye;
-    private Item assignedItem;
+    private GameObject assignedItem;
 
-    public void AssignItem(Item item)
+    public void AssignItem(GameObject item)
     {
-        assignedItem = item;
-        GetComponent<Image>().sprite = item.itemSprite;
+        assignedItem = Instantiate(item, Vector3.zero, Quaternion.identity, transform);
+        GetComponent<Image>().sprite = assignedItem.GetComponent<ItemInteractable>().itemSprite;
+        //GetComponent<Image>().sprite = item.itemSprite;
+    }
+
+    public void UseItem()
+    {
+        if (assignedItem==null)
+        {
+            return;
+        }
+        assignedItem.GetComponent<ItemInteractable>().OnInteract();
     }
 }

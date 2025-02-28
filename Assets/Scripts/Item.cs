@@ -7,7 +7,6 @@ public class Item : ScriptableObject
     [Header("Parameters:")]
     public string objectName;
     public Sprite itemSprite;
-    public ItemActionScript actionScript;
     void Start()
     {
         
@@ -22,4 +21,5 @@ public class Item : ScriptableObject
     {
         
     }
+    //делает новый скриптовой объект
 }

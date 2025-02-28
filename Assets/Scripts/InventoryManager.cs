@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    [SerializeField] private List<Item> items;
+    [SerializeField] private List<GameObject> items;
     public InventorySlotScript inventorySlot;
     [SerializeField] private Transform inventory;
     void Start()
@@ -16,14 +16,14 @@ public class InventoryManager : MonoBehaviour
     {
         
     }
-    public void AddItem(Item item)
+    public void AddItem(GameObject item)
     {
         items.Add(item);
 
         UpdateInventory();
     }
 
-    public void RemoveItem(Item item)
+    public void RemoveItem(GameObject item)
     {
         items.Remove(item);
 
@@ -37,7 +37,7 @@ public class InventoryManager : MonoBehaviour
             Destroy(child.gameObject);
         }
         //instantiate slots
-        foreach(Item item in items)
+        foreach(GameObject item in items)
         {
             GameObject newSlot = Instantiate(inventorySlot.gameObject, inventory);
             newSlot.GetComponent<InventorySlotScript>().AssignItem(item);

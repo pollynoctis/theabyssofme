@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickUpInteractable : InteractableScript
 {
-    [SerializeField] private Item pickUp;
+    [SerializeField] private GameObject pickUp;
     private InventoryManager manager;
 
     private void Start()
@@ -27,4 +27,6 @@ public class PickUpInteractable : InteractableScript
     {
         //throw new System.NotImplementedException();
     }
+    
+    //взаимодействовать и взять
 }
