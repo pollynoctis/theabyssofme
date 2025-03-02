@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class MultiCmd : MonoBehaviour
 {
+    public static int multipleCMDsCount = 0;
     void Start()
     {
+        multipleCMDsCount += 1;
         OpenCmdWindow("can you hear it?", 7, "it's coming...");
         OpenCmdWindow("watch behind you", 5, "too late...");
         OpenCmdWindow("close your eyes", 3, "coo-coo!");
@@ -13,6 +15,8 @@ public class MultiCmd : MonoBehaviour
 
     void OpenCmdWindow(string firstMessage, int delay, string secondMessage)
     {
+        
+        
         ProcessStartInfo psi = new ProcessStartInfo
         {
             FileName = "cmd.exe",

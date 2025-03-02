@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class CmdSpam : MonoBehaviour
 {
+    public static int CMDSpamCount = 0;
     void Start()
     {
+        CMDSpamCount += 1;
+        
         for (int i = 0; i < 2; i++) // logu daudzums
         {
             ProcessStartInfo psi = new ProcessStartInfo
