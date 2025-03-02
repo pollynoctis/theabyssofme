@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
-    [SerializeField] private KeyCode InteractKey = KeyCode.Space;
+    [SerializeField] private KeyCode InteractKey = KeyCode.E;
     [SerializeField] private float interactRadius = 2f;
     [SerializeField] private LayerMask layerMask;
     private InteractableScript currentInteractable;
