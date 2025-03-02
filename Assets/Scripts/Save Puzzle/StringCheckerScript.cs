@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomScript : MonoBehaviour
+public class StringCheckerScript : MonoBehaviour
 {
+    //šis skripts pārbauda, vai txt failā ir nepieciešamais teksts. tā kā mīkla vēl nav gatava, šis ir tikai piemērs
     public string testString = "sdkfhkshdfPOOPkfshdkfhgsdf";
     public string testStringTwo = "jahsdbjasdkjahskfj";
     void Start()
@@ -20,9 +21,5 @@ public class RandomScript : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

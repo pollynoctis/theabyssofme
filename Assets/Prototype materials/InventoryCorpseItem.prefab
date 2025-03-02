@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1080756413669486660}
   - component: {fileID: 613765581424717889}
   m_Layer: 0
-  m_Name: CorpseItem
+  m_Name: InventoryCorpseItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
