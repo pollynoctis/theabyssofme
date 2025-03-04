@@ -16,7 +16,7 @@ public class SaveSystemNew : MonoBehaviour
     public Vector2 checkpointPosition; 
     void Start()
     {
-        player = GameObject.Find("PlayerSquare");
+        player = GameObject.Find("PrototypeMainCharacter");
         if (player == null)
         {
             Debug.LogError("player not found");
