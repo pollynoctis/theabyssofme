@@ -5,6 +5,7 @@ using TMPro;
 
 public abstract class InteractableScript : MonoBehaviour
 {
+    //parental script visiem interactable objektiem spēlē
     public virtual void Awake()
     {
         gameObject.layer = 6;
@@ -13,6 +14,6 @@ public abstract class InteractableScript : MonoBehaviour
     public abstract void OnInteract();
     public abstract void OnFocus();
     public abstract void OnLoseFocus();
-    //использовать обьект на сцене, и это его действия 
+    
     
 }

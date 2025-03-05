@@ -5,9 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class PickUpInteractable : InteractableScript
 {
+    //script, ko likt virsū itemam, ko var likt inventory
     [SerializeField] private GameObject pickUp;
     private InventoryManager manager;
-
     private void Start()
     {
         manager = FindObjectOfType<InventoryManager>();
@@ -18,7 +18,6 @@ public class PickUpInteractable : InteractableScript
         manager.AddItem(pickUp);
         Destroy(gameObject);
     }
-
     public override void OnFocus()
     {
         //throw new System.NotImplementedException();
@@ -29,5 +28,4 @@ public class PickUpInteractable : InteractableScript
         //throw new System.NotImplementedException();
     }
     
-    //взаимодействовать и взять
 }

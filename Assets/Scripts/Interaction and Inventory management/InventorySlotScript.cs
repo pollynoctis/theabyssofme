@@ -12,7 +12,7 @@ public class InventorySlotScript : MonoBehaviour
     public void AssignItem(GameObject item)
     {
         assignedItem = Instantiate(item, Vector3.zero, Quaternion.identity, transform);
-        GetComponent<Image>().sprite = assignedItem.GetComponent<ItemInteractable>().itemSprite;
+        GetComponent<Image>().sprite = assignedItem.GetComponent<ItemInteractableInInventory>().itemSprite;
         //GetComponent<Image>().sprite = item.itemSprite;
     }
 
@@ -22,6 +22,6 @@ public class InventorySlotScript : MonoBehaviour
         {
             return;
         }
-        assignedItem.GetComponent<ItemInteractable>().OnInteract();
+        assignedItem.GetComponent<ItemInteractableInInventory>().OnInteract();
     }
 }

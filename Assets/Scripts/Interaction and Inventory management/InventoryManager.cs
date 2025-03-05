@@ -12,10 +12,6 @@ public class InventoryManager : MonoBehaviour
         UpdateInventory();
     }
 
-    void Update()
-    {
-        
-    }
     public void AddItem(GameObject item)
     {
         items.Add(item);
@@ -31,7 +27,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     public void UpdateInventory()
-    {   //clear inventory
+    {   
         foreach(Transform child in inventory)
         {
             Destroy(child.gameObject);
@@ -44,4 +40,6 @@ public class InventoryManager : MonoBehaviour
             newSlot.transform.position = Vector3.zero;
         }
     }
+    
+    
 }

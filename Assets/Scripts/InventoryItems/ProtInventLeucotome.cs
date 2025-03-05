@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProtLeucotome : ItemInteractable
+public class ProtLeucotome : ItemInteractableInInventory
 {
     
     private void Start()
