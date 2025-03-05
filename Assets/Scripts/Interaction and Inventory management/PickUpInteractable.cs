@@ -15,8 +15,9 @@ public class PickUpInteractable : InteractableScript
     public override void OnInteract()
     {
         Debug.Log("interacted");
-        manager.AddItem(pickUp);
+        manager.AddItem(pickUp); ;
         Destroy(gameObject);
+        
     }
     public override void OnFocus()
     {

@@ -7,6 +7,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private List<GameObject> items;
     public InventorySlotScript inventorySlot;
     [SerializeField] private Transform inventory;
+    
     void Start()
     {
         UpdateInventory();
