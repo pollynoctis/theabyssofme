@@ -1,27 +1,39 @@
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Smoothtext : MonoBehaviour
+public class SmoothTextLoop : MonoBehaviour
 {
-    public Text TextGameObject;
+    [SerializeField] private TextMeshProUGUI TextGameObject;
+    [SerializeField] private float textSpeed = 0.03f;
     private string text;
+    private bool isSkipping = false;
+    
     
     void Start()
     {
         text = TextGameObject.text;
         TextGameObject.text = "";
-        StartCoroutine(TextCorutine());
+        StartCoroutine(TextCoroutine());
     }
-
-    IEnumerator TextCorutine()
+    void Update()
+    {
+        if (Input.anyKeyDown) 
+        {
+            isSkipping = true;
+        }
+    }
+    IEnumerator TextCoroutine()
     {
         foreach (char abc in text)
         {
+            if (isSkipping)
+            {
+                TextGameObject.text = text;
+                yield break;
+            }
             TextGameObject.text += abc;
-            yield return new WaitForSeconds(0.03f); //time for each letter
+            yield return new WaitForSeconds(textSpeed); //laiks katram burtam
         }
     }
-    
 }
