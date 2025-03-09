@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    //Should be in every scene on an empty object without other scripts!!! do not combine with save system
+    
     public void OpenMenu()
     {
         SceneManager.LoadScene("1-MainMenu");
@@ -22,7 +24,12 @@ public class SceneChanger : MonoBehaviour
     public void TestingLoad()
     {
         SceneManager.LoadScene("4-Testing");
-    }    
+    }
+
+    public void ContinueTestingLoad()
+    {
+        SceneManager.LoadScene("5-Testing");
+    }
     public void Exit()
     {
         Application.Quit();

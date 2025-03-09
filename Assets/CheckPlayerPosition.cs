@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CheckPlayerPosition : MonoBehaviour
 {
+    
+    //delete this script, it's not needed
     void Start()
     {
         SaveSystem saveSystem = FindObjectOfType<SaveSystem>();
@@ -16,7 +18,7 @@ public class CheckPlayerPosition : MonoBehaviour
         if (rb != null)
         {
             rb.constraints = RigidbodyConstraints2D.None;
-            rb.velocity = Vector2.zero; // Сбрасываем скорость
+            rb.velocity = Vector2.zero; 
         }
     }
 

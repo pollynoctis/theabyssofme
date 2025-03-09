@@ -3094,7 +3094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstText: {fileID: 1962973888}
   nextText: {fileID: 1592378317}
-  displayDuration: 3
+  displayDuration: 5
 --- !u!114 &1962973887
 MonoBehaviour:
   m_ObjectHideFlags: 0

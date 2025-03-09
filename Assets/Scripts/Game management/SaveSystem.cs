@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -10,13 +11,30 @@ public class SaveSystem : MonoBehaviour
 {
     private string savePath;
     //public string sceneName; //should be empty
-    public GameObject player;
+    [CanBeNull] public GameObject player;
     public Vector2 checkpointPosition;
 
     private string filePath;
+    
+    private static SaveSystem _instance;
+    public static SaveSystem Instance { get { return _instance; } }
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         player = GameObject.Find("PrototypeMainCharacter");
         if (player == null)
         {
@@ -58,28 +76,21 @@ public class SaveSystem : MonoBehaviour
         {
             string checkpointData = File.ReadAllText(filePath);
             string[] positionFromText = checkpointData.Split(" ");
-
             string sceneToLoad = positionFromText[3];
-
-            // Загружаем сцену и ждем её полной загрузки
+            
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
             while (!asyncLoad.isDone)
             {
                 yield return null;
             }
-
-            // Ждём пока объект игрока загрузится
-            yield return new WaitForSeconds(0.1f); // небольшая задержка для безопасности
-
-            // Находим игрока заново, так как он может быть уничтожен при смене сцены
+            yield return new WaitForSeconds(0.1f); 
+            
             player = GameObject.FindWithTag("Player");
             if (player == null)
             {
                 Debug.LogError("Player not found after scene load!");
                 yield break;
             }
-
-            // Устанавливаем позицию игрока
             checkpointPosition = new Vector2(float.Parse(positionFromText[1]), float.Parse(positionFromText[2]));
             player.transform.position = checkpointPosition;
             Debug.Log($"Player loaded at {checkpointPosition}");
@@ -94,5 +105,6 @@ public class SaveSystem : MonoBehaviour
     public void ClearSaveData()
     {
         File.WriteAllText(filePath, "   ");
+        //clear all player prefs as well
     }
 }
