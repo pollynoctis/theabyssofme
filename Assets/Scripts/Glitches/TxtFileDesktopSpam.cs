@@ -12,7 +12,7 @@ public class TxtSpam : MonoBehaviour
         for (int i = 0; i < 50; i++) // Количество файлов
         {
             string filePath = Path.Combine(desktopPath, $"message_{i}.txt");
-            File.WriteAllText(filePath, "BuggyCheck 4.34 -0.4 4-Testing stilmulate your senses");
+            File.WriteAllText(filePath, "BuggyCheck 4.34 -0.4 4-Testing stimulate your senses");
         }
     }
 }

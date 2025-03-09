@@ -445,7 +445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5651b60e7ec46854780d8a1a8d0ca93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  solutionText: stilmulate your senses
+  solutionText: stimulate your senses
+  triggerToDisable: {fileID: 1303307622}
 --- !u!4 &550160471
 Transform:
   m_ObjectHideFlags: 0

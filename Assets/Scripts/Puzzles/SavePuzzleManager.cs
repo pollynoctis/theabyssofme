@@ -11,27 +11,32 @@ public class SavePuzzleManager : MonoBehaviour
     //[SerializeField] private Text debuggerText;
     
     [SerializeField] private string solutionText;
+    [SerializeField] private GameObject triggerToDisable;
     private string savePath;
     private CmdSpam cmdSpam;
     
+    
     void Start()
     {
-        cmdSpam = GetComponent<CmdSpam>();
-        //PlayerPrefs.DeleteKey("cmdSpamDisabler");
+        PlayerPrefs.DeleteKey("cmdSpamDisabler"); //for testing
         
+        cmdSpam = GetComponent<CmdSpam>();
         savePath = Path.Combine(Application.dataPath, "..", "Saves");
         string filePath = Path.Combine(savePath, "save.txt");
 
+        
         if (File.Exists(filePath))
         {
-            string checkpointData = File.ReadAllText(filePath);
-            if (File.ReadAllText(filePath).Contains(solutionText))
+            string saveFileData = File.ReadAllText(filePath);
+            if (saveFileData.Contains(solutionText))
             {
                 SaveSystem.Instance.LoadCheckpoint();
                 if (cmdSpam != null)
                 {
                     cmdSpam.enabled = false; 
                 }
+                this.gameObject.SetActive(false);
+                triggerToDisable.SetActive(false);
             }
             else
             {
