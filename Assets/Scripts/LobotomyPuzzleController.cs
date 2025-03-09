@@ -16,6 +16,7 @@ public class LobotomyPuzzleController : MonoBehaviour
     public void CorrectHit()
     {
         AudioSource.PlayClipAtPoint(hitSound, Camera.main.transform.position);
+        gameObject.SetActive(false);
         //pievienot skaņu un tumšo ekrānu
     }
 

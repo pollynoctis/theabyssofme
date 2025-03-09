@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2342752020228925035}
   m_Layer: 0
   m_Name: PrototypeMainCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,7 +138,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2387502, y: 3.878924}
+    oldSize: {x: 2.5909998, y: 3.103139}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f430395f7b3827f43beeb0d85d8d3c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractKey: 32
+  InteractKey: 101
   interactRadius: 2
   layerMask:
     serializedVersion: 2

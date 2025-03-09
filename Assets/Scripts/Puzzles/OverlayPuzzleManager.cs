@@ -10,11 +10,6 @@ public class OverlayPuzzleManager : MonoBehaviour
         lobotomyOverlay.SetActive(false);
     }
 
-    void Update()
-    {
-        
-    }
-
     public void StartLobotomy()
     {
         lobotomyOverlay.SetActive(true);

@@ -509,7 +509,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointName: One
-  triggerText: {fileID: 0}
   savesSys: {fileID: 1190147385}
 --- !u!1 &229369366
 GameObject:
@@ -1392,9 +1391,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8358c34c10d3f0e49aa7d1e5e47022d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugTextOne: {fileID: 0}
-  debugTextTwo: {fileID: 0}
-  debugTextThree: {fileID: 0}
   player: {fileID: 1576349636}
   checkpointPosition: {x: 0, y: 0}
 --- !u!1 &1331899242
@@ -2260,7 +2256,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointName: Two
-  triggerText: {fileID: 573707646}
   savesSys: {fileID: 1190147385}
 --- !u!1 &2109663509
 GameObject:
@@ -2418,17 +2413,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrototypeMainCharacter
       objectReference: {fileID: 0}
-    - target: {fileID: 2342752020228925035, guid: a7deb1a1cac46d540b7df097e20e24ea, type: 3}
-      propertyPath: InteractKey
-      value: 101
-      objectReference: {fileID: 0}
     - target: {fileID: 3416302173422260576, guid: a7deb1a1cac46d540b7df097e20e24ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: -2.1
       objectReference: {fileID: 0}
     - target: {fileID: 3416302173422260576, guid: a7deb1a1cac46d540b7df097e20e24ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.94
       objectReference: {fileID: 0}
     - target: {fileID: 3416302173422260576, guid: a7deb1a1cac46d540b7df097e20e24ea, type: 3}
       propertyPath: m_LocalPosition.z

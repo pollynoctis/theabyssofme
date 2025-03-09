@@ -8,6 +8,7 @@ public class EndingTextScript : AutomaticTextChange
 {
     //šis skripts ir domāts pēdējam teksta objektam scēnā. viņš ļauj automātiski pārslēgt ainu
     [SerializeField] private string sceneToLoad;
+    [SerializeField] private GameObject fadeOutScreen;
 
     public override void Start()
     {
@@ -20,7 +21,7 @@ public class EndingTextScript : AutomaticTextChange
         // Deactivate the text object
         yield return new WaitForSeconds(displayDuration);
         firstText.gameObject.SetActive(false);
-
+        fadeOutScreen.SetActive(true);
         SceneManager.LoadScene(sceneToLoad);
     }
     

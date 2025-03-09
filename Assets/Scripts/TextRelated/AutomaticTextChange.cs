@@ -7,7 +7,7 @@ using TMPro;
 public class AutomaticTextChange : MonoBehaviour
 {
     public TextMeshProUGUI firstText;
-    [SerializeField] [CanBeNull] private TextMeshProUGUI nextText;
+    [CanBeNull] public TextMeshProUGUI nextText;
     public float displayDuration = 3f;
     
     public virtual void Start()
@@ -22,8 +22,7 @@ public class AutomaticTextChange : MonoBehaviour
         // Deactivate the text object
         yield return new WaitForSeconds(displayDuration);
         firstText.gameObject.SetActive(false);
+        firstText.gameObject.SetActive(false);
         nextText.gameObject.SetActive(true);
-        
-        
     }
 }

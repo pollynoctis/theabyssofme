@@ -3,9 +3,9 @@ using UnityEngine;
 public class CinematicBusMovement : MonoBehaviour
 {
     private float speed = 5f;      // Скорость основного движения
-    private float amplitudeX = 10f; // Размах движения по горизонтали
-    private float amplitudeY = 2f; // Размах покачивания по вертикали
-    private float swaySpeed = 0.5f; // Скорость покачивания
+    private float amplitudeX = 10f; 
+    private float amplitudeY = 2f; 
+    private float swaySpeed = 0.5f; 
 
     private Vector3 startPosition;
     private float randomOffset;
@@ -13,7 +13,7 @@ public class CinematicBusMovement : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
-        randomOffset = Random.Range(0f, 100f); // Для уникального движения
+        randomOffset = Random.Range(0f, 100f); 
     }
 
     void Update()

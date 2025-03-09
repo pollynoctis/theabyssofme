@@ -18,7 +18,11 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("3-LabOne");
     }
-    
+
+    public void TestingLoad()
+    {
+        SceneManager.LoadScene("4-Testing");
+    }    
     public void Exit()
     {
         Application.Quit();
