@@ -15,7 +15,6 @@ public class SavePuzzleManager : MonoBehaviour
     private string savePath;
     private CmdSpam cmdSpam;
     
-    
     void Start()
     {
         PlayerPrefs.DeleteKey("cmdSpamDisabler"); //for testing
@@ -23,7 +22,6 @@ public class SavePuzzleManager : MonoBehaviour
         cmdSpam = GetComponent<CmdSpam>();
         savePath = Path.Combine(Application.dataPath, "..", "Saves");
         string filePath = Path.Combine(savePath, "save.txt");
-
         
         if (File.Exists(filePath))
         {
