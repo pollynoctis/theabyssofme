@@ -10,7 +10,7 @@ public class SmoothTextLoop : MonoBehaviour
     private bool isSkipping = false;
     
     
-    void Start()
+    void OnEnable()
     {
         text = TextGameObject.text;
         TextGameObject.text = "";

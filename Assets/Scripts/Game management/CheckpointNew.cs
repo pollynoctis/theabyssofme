@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class CheckpointNew : MonoBehaviour
 {
     [SerializeField] private string checkpointName;
+    [SerializeField] private TMP_Text savingText;
     private string sceneName;
     private SaveSystem savesSys;
     
@@ -30,6 +32,15 @@ public class CheckpointNew : MonoBehaviour
             sceneName = SceneManager.GetActiveScene().name;
             Debug.Log("current scene name is: " + sceneName);
             savesSys.SaveCheckpoint(checkpointName, sceneName);
+            savingText.gameObject.SetActive(true);
+            StartCoroutine(DisableSaving());
+            
         }
     }
+    private IEnumerator DisableSaving()
+    {
+        yield return new WaitForSeconds(3f);
+        savingText.gameObject.SetActive(false);
+    }
+    
 }
