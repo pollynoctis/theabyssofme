@@ -41,6 +41,7 @@ public class TriggerZone : MonoBehaviour
             
             if (File.Exists(filePath))
             {
+                
                 File.WriteAllText(filePath, "check your desktop"); 
             }
             

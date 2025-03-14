@@ -34,7 +34,9 @@ public class SaveSystem : MonoBehaviour
 
     void Start()
     {
-        //DontDestroyOnLoad(gameObject);
+        savePath = Path.Combine(Application.dataPath, "..", "Saves");
+        
+        
         player = GameObject.Find("PrototypeMainCharacter");
         if (player == null)
         {
@@ -45,7 +47,6 @@ public class SaveSystem : MonoBehaviour
             Debug.Log("player found");
         }
         
-        savePath = Path.Combine(Application.dataPath, "..", "Saves");
         if (!Directory.Exists(savePath))
         {
             Directory.CreateDirectory(savePath);
@@ -56,7 +57,7 @@ public class SaveSystem : MonoBehaviour
                 File.WriteAllText(filePath, "first load"); 
             }
         }
-        LoadCheckpoint();
+        //LoadCheckpoint();
     }
     
     public void SaveCheckpoint(string checkpointName, string sceneName)
@@ -97,13 +98,14 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    private void LoadPlayerPosition(Vector2 pos)
+    /*private void LoadPlayerPosition(Vector2 pos)
     {
         player.transform.position = pos;
-    }
+    }*/
 
     public void ClearSaveData()
     {
+        string filePath = Path.Combine(savePath, "save.txt");
         File.WriteAllText(filePath, "   ");
         //clear all player prefs as well
     }

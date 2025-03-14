@@ -33,7 +33,7 @@ public class SavePuzzleManager : MonoBehaviour
                 {
                     cmdSpam.enabled = false; 
                 }
-                this.gameObject.SetActive(false);
+                gameObject.SetActive(false);
                 triggerToDisable.SetActive(false);
             }
             else
