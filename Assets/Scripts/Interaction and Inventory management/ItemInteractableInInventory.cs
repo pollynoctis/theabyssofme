@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public abstract class ItemInteractableInInventory : MonoBehaviour
 {
     public Sprite itemSprite;
-    
     public virtual void Awake()
     {
         gameObject.layer = 6;
     }
 
     public abstract void OnInteract();
+
 }

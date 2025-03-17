@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class TestingItemFunctionScript : ItemInteractableInInventory
 {
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+   
 
     public override void OnInteract()
     {

@@ -11,7 +11,7 @@ public class SaveSystem : MonoBehaviour
 {
     private string savePath;
     //public string sceneName; //should be empty
-    [CanBeNull] public GameObject player;
+    [CanBeNull] private GameObject player;
     public Vector2 checkpointPosition;
 
     private string filePath;
@@ -42,10 +42,7 @@ public class SaveSystem : MonoBehaviour
         {
             Debug.LogError("player not found");
         }
-        else
-        {
-            Debug.Log("player found");
-        }
+        
         
         if (!Directory.Exists(savePath))
         {

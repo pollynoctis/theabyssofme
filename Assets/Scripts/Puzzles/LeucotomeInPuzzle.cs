@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class LeucotomeInPuzzle : MonoBehaviour
@@ -5,6 +6,7 @@ public class LeucotomeInPuzzle : MonoBehaviour
     [SerializeField] private Transform hitPoint; // Точка удара на инструменте
     [SerializeField] private float hitRadius = 0.1f; // Радиус проверки попадания
     private bool isDragging = false;
+    
 
     private void Update()
     {
@@ -36,11 +38,15 @@ public class LeucotomeInPuzzle : MonoBehaviour
         {
             Debug.Log("lobotomy point");
             GameObject.Find("LobotomyPuzzle").GetComponent<LobotomyPuzzleController>().CorrectHit();
+            
+            
+            
         }
         else
         {
             Debug.Log("wrong spot");
             GameObject.Find("LobotomyPuzzle").GetComponent<LobotomyPuzzleController>().StartCoroutine("ScreenShake");
+            
         }
     }
     
@@ -52,4 +58,6 @@ public class LeucotomeInPuzzle : MonoBehaviour
             Gizmos.DrawWireSphere(hitPoint.position, hitRadius);
         }
     }
+    
+    
 }

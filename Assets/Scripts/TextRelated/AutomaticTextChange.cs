@@ -23,6 +23,6 @@ public class AutomaticTextChange : MonoBehaviour
         yield return new WaitForSeconds(displayDuration);
         firstText.gameObject.SetActive(false);
         firstText.gameObject.SetActive(false);
-        nextText.gameObject.SetActive(true);
+        nextText?.gameObject.SetActive(true);
     }
 }

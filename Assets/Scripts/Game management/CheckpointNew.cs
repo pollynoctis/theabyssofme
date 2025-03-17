@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BoxCollider2D))]
 
-public class CheckpointNew : MonoBehaviour
+public class Checkpoint : MonoBehaviour
 {
     [SerializeField] private string checkpointName;
     [SerializeField] private TMP_Text savingText;
@@ -30,11 +30,10 @@ public class CheckpointNew : MonoBehaviour
         {
             savesSys.checkpointPosition = transform.position;
             sceneName = SceneManager.GetActiveScene().name;
-            Debug.Log("current scene name is: " + sceneName);
+            //Debug.Log("current scene name is: " + sceneName);
             savesSys.SaveCheckpoint(checkpointName, sceneName);
             savingText.gameObject.SetActive(true);
             StartCoroutine(DisableSaving());
-            
         }
     }
     private IEnumerator DisableSaving()
