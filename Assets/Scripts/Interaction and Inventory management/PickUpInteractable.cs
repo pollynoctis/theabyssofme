@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
 public class PickUpInteractable : InteractableScript
 {
     //script, ko likt virsū itemam, ko var likt inventory
@@ -14,7 +13,7 @@ public class PickUpInteractable : InteractableScript
     }
     public override void OnInteract()
     {
-        Debug.Log("interacted");
+        //Debug.Log("interacted");
         manager.AddItem(pickUp); ;
         Destroy(gameObject);
         

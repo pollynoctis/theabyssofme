@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractInScene : MonoBehaviour
+public class PlayerInteractor: MonoBehaviour
 {
     //attached to the player. ļauj spēlētājam izmantot item uz scene
     [SerializeField] private KeyCode InteractKey = KeyCode.E;

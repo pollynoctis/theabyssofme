@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public abstract class InteractableScript : MonoBehaviour
 {
     //parental script visiem interactable objektiem spēlē

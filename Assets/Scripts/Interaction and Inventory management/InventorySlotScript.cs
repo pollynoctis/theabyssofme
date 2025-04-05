@@ -23,5 +23,6 @@ public class InventorySlotScript : MonoBehaviour
             return;
         }
         assignedItem.GetComponent<ItemInteractableInInventory>().OnInteract();
+        
     }
 }
