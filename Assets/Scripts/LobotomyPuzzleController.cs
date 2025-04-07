@@ -13,12 +13,19 @@ public class LobotomyPuzzleController : MonoBehaviour
 
     public AudioClip hitSound;
 
+
+    [SerializeField] private InventoryManager inventManager;
+
+    [SerializeField] private GameObject leuctome;
+    
+    
     private void Start()
     {
         keyToEnable.SetActive(false);
         SimpleMovement component = player.GetComponent<SimpleMovement>();
         component.enabled = false;
         noise = cinemachineCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        player.GetComponent<Rigidbody2D>().isKinematic = true;
     }
     public void CorrectHit()
     {
@@ -31,6 +38,11 @@ public class LobotomyPuzzleController : MonoBehaviour
         
         
         gameObject.SetActive(false);
+        
+        
+        player.GetComponent<Rigidbody2D>().isKinematic = false;
+        inventManager.RemoveItem(leuctome);
+        
         //pievienot skaņu un tumšo ekrānu
     }
 
