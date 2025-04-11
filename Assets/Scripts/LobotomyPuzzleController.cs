@@ -48,7 +48,7 @@ public class LobotomyPuzzleController : MonoBehaviour
 
     public IEnumerator ScreenShake()
     {
-        Debug.Log("shake");
+        //Debug.Log("shake");
 
         /*if (noise == null)
         {
@@ -63,6 +63,5 @@ public class LobotomyPuzzleController : MonoBehaviour
 
         noise.m_AmplitudeGain = 0f;
         noise.m_FrequencyGain = 0f;
-        
     }
 }

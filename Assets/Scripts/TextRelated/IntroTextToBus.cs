@@ -8,7 +8,7 @@ public class IntroTextToBus : AutomaticTextChange
     [SerializeField] private GameObject toDisable;
     
     
-    public override IEnumerator DeactivateTextAfterDelay()
+    protected override IEnumerator DeactivateTextAfterDelay()
     {
         yield return new WaitForSeconds(displayDuration);
         firstText.gameObject.SetActive(false);

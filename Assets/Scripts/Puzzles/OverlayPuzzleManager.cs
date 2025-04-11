@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class OverlayPuzzleManager : MonoBehaviour
 {
-    [SerializeField] private GameObject lobotomyOverlay;
+    [SerializeField] private GameObject puzzleOverlay;
     [SerializeField] private GameObject player;
     void Start()
     {
-        lobotomyOverlay.SetActive(false);
+        puzzleOverlay.SetActive(false);
     }
 
-    public void StartLobotomy()
+    public void StartPuzzle()
     {
-        lobotomyOverlay.transform.position = player.transform.position;
-        lobotomyOverlay.SetActive(true);
+        puzzleOverlay.transform.position = player.transform.position;
+        puzzleOverlay.SetActive(true);
     }
 }

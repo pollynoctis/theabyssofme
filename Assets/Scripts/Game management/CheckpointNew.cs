@@ -14,6 +14,11 @@ public class Checkpoint : MonoBehaviour
     private string sceneName;
     private SaveSystem savesSys;
     
+    private void Reset()
+    {
+        var collider = GetComponent<BoxCollider2D>();
+        collider.isTrigger = true;
+    }
     private void Start()
     {
         savesSys = FindObjectOfType<SaveSystem>();
@@ -21,8 +26,6 @@ public class Checkpoint : MonoBehaviour
         {
             Debug.LogError("save system not linked!");
         }
-        Collider2D collider = GetComponent<Collider2D>();
-        collider.isTrigger = true;
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -38,8 +41,7 @@ public class Checkpoint : MonoBehaviour
     }
     private IEnumerator DisableSaving()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         savingText.gameObject.SetActive(false);
     }
-    
 }

@@ -38,15 +38,11 @@ public class LeucotomeInPuzzle : MonoBehaviour
         {
             Debug.Log("lobotomy point");
             GameObject.Find("LobotomyPuzzle").GetComponent<LobotomyPuzzleController>().CorrectHit();
-            
-            
-            
         }
         else
         {
             Debug.Log("wrong spot");
             GameObject.Find("LobotomyPuzzle").GetComponent<LobotomyPuzzleController>().StartCoroutine("ScreenShake");
-            
         }
     }
     

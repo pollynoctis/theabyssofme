@@ -6,6 +6,11 @@ public class ShowInteractable : InteractableScript
 {
     //skripts interactable priekšmetiem, kas netiek pievienoti inventory
     [SerializeField] private GameObject objectToShow;
+    private void Reset()
+    {
+        var collider = GetComponent<BoxCollider2D>();
+        collider.isTrigger = true;
+    }
     public override void OnInteract()
     {
         objectToShow.SetActive(true);

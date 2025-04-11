@@ -6,6 +6,11 @@ using UnityEngine;
 public class PlayerTeleporter : MonoBehaviour
 {
     [SerializeField] private Transform teleportDestination; 
+    private void Reset()
+    {
+        var collider = GetComponent<BoxCollider2D>();
+        collider.isTrigger = true;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

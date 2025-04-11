@@ -7,19 +7,22 @@ public class ProtKey : ItemInteractableInInventory
 {
     private GameObject player;
     private GameObject lockedDoor;
+    private GameObject houseOverlay;
     //private GameObject unlockMessage;
     private PauseMenuToggler menuToggler;
 
     private void Start()
     {
         player = GameObject.Find("PrototypeMainCharacter");
-        lockedDoor = GameObject.Find("Trigger_Door");
-        /*unlockMessage = GameObject.Find("KeyUseMessage") ?? GameObject.Find("/KeyUseMessage"); 
+        houseOverlay = GameObject.Find("HouseOverlay");
+        lockedDoor = GameObject.Find("HouseDoor");
+
+        /*unlockMessage = GameObject.Find("KeyUseMessage") ?? GameObject.Find("/KeyUseMessage");
         if (unlockMessage == null)
         {
             unlockMessage = GameObject.FindObjectOfType<Canvas>().transform.Find("KeyUseMessage")?.gameObject;
             print(unlockMessage.name);
-        }*/
+        }*/ //veca versija, lai parādās message
     }
 
     public override void OnInteract()
@@ -32,8 +35,8 @@ public class ProtKey : ItemInteractableInInventory
         Collider2D doorCollider = lockedDoor.GetComponent<Collider2D>();
         if (playerCollider.IsTouching(doorCollider))
         {
-            lockedDoor.SetActive(false); 
-            //Debug.Log("Door unlocked!");
+            houseOverlay.SetActive(false); 
+            //Debug.Log("House unlocked!");
         }
         else
         {
