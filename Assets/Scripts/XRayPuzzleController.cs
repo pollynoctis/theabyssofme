@@ -15,6 +15,10 @@ public class XRayPuzzleController : MonoBehaviour
     
     private CinemachineBasicMultiChannelPerlin noise;
     
+    
+    
+    public CutLine[] lines;
+    
     void Start()
     {
         noise = cinemachineCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
@@ -32,5 +36,27 @@ public class XRayPuzzleController : MonoBehaviour
 
         noise.m_AmplitudeGain = 0f;
         noise.m_FrequencyGain = 0f;
+    }
+    
+    public void ConfirmLine(int index)
+    {
+        lines[index].ConfirmCut();
+        CheckWin();
+    }
+    private void CheckWin()
+    {
+        if (lines[0].isCut && lines[1].isCut)
+        {
+            //something-something. disable door, enable some text, use text manager
+            print("puzzle done!");
+        }
+    }
+    public void ResetProgress()
+    {
+        foreach (var line in lines)
+        {
+            line.isCut = false;
+        }
+        print("progress reset");
     }
 }
