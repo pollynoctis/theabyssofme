@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 6213116192864294761}
   - component: {fileID: 2115565846251755315}
   m_Layer: 0
-  m_Name: PrototypeMainCharacter
+  m_Name: Milly
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

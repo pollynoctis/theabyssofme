@@ -8,6 +8,8 @@ public class SimpleMovement : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private SpriteRenderer renderer;
     [SerializeField] private Rigidbody2D rb;
+
+    [SerializeField] private ExecutionerMovement executionerMovement;
     
     
     [SerializeField] private float speed = 100f;
@@ -23,5 +25,7 @@ public class SimpleMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
+        
+        executionerMovement.LateMove(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 }

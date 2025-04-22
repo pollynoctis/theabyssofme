@@ -1424,7 +1424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6825261715633797001, guid: 1d5c552bc9da80a4e9df8910c21bdf66, type: 3}
       propertyPath: m_Name
-      value: PrototypeMainCharacter
+      value: Milly
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

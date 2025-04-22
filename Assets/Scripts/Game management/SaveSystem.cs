@@ -9,16 +9,14 @@ using TMPro;
 
 public class SaveSystem : MonoBehaviour
 {
-    private string savePath;
     //public string sceneName; //should be empty
-    [CanBeNull] private GameObject player;
     public Vector2 checkpointPosition;
-
+    [CanBeNull] private GameObject player;
+    private string savePath;
     private string filePath;
     
     private static SaveSystem _instance;
     public static SaveSystem Instance { get { return _instance; } }
-
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -36,13 +34,11 @@ public class SaveSystem : MonoBehaviour
     {
         savePath = Path.Combine(Application.dataPath, "..", "Saves");
         
-        
-        player = GameObject.Find("PrototypeMainCharacter");
+        player = GameObject.Find("Milly");
         if (player == null)
         {
             Debug.LogError("player not found");
         }
-        
         
         if (!Directory.Exists(savePath))
         {
@@ -103,7 +99,7 @@ public class SaveSystem : MonoBehaviour
     public void ClearSaveData()
     {
         string filePath = Path.Combine(savePath, "save.txt");
-        File.WriteAllText(filePath, "   ");
+        File.WriteAllText(filePath, "Clean");
         //clear all player prefs as well
     }
 }
