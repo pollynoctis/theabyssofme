@@ -11,7 +11,7 @@ public class IntroTextToBus : AutomaticTextChange
     protected override IEnumerator DeactivateTextAfterDelay()
     {
         yield return new WaitForSeconds(displayDuration);
-        firstText.gameObject.SetActive(false);
+        currentText.gameObject.SetActive(false);
         nextText?.gameObject.SetActive(true);
         toDisable.SetActive(false);
         toEnable.SetActive(true);

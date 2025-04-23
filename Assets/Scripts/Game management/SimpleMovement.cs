@@ -8,12 +8,12 @@ public class SimpleMovement : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private SpriteRenderer renderer;
     [SerializeField] private Rigidbody2D rb;
-
-    [SerializeField] private ExecutionerMovement executionerMovement;
+    [SerializeField] private float speed = 10f;
+    [SerializeField] private float accelaration = 2f;
     
-    
-    [SerializeField] private float speed = 100f;
     private Vector2 movement;
+
+    public bool isRunning;
     
     void Update()
     {
@@ -24,8 +24,17 @@ public class SimpleMovement : MonoBehaviour
         
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
         
-        executionerMovement.LateMove(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime * accelaration);
+            isRunning = true;
+        }
+        else
+        {
+            rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
+            isRunning = false;
+        }
+        //executionerMovement.LateMove(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 }

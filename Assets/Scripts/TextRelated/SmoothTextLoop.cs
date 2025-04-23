@@ -18,7 +18,12 @@ public class SmoothTextLoop : MonoBehaviour
     }
     void Update()
     {
-        if (Input.anyKeyDown) 
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) 
+            || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.E))
+        {
+            return;
+        }
+        if (Input.anyKeyDown)
         {
             isSkipping = true;
         }

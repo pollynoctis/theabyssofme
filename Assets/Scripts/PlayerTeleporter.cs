@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class PlayerTeleporter : MonoBehaviour
 {
-    [SerializeField] private Transform teleportDestination; 
+    [SerializeField] private Transform teleportDestination;
+    [SerializeField] private GameObject executioner;
     private void Reset()
     {
         var collider = GetComponent<BoxCollider2D>();
@@ -16,6 +17,7 @@ public class PlayerTeleporter : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.transform.position = teleportDestination.position;
+            executioner.transform.position = teleportDestination.position;
         }
     }
 }

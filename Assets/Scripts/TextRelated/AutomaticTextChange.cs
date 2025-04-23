@@ -7,7 +7,7 @@ using TMPro;
 
 public class AutomaticTextChange : MonoBehaviour
 {
-    public TextMeshProUGUI firstText;
+    public TextMeshProUGUI currentText;
     [CanBeNull] public TextMeshProUGUI nextText;
     public float displayDuration = 3f;
 
@@ -21,15 +21,15 @@ public class AutomaticTextChange : MonoBehaviour
     {
         yield return new WaitForSeconds(displayDuration);
         
-        firstText.gameObject.SetActive(false);
-        if (firstText.gameObject.activeSelf)
+        currentText.gameObject.SetActive(false);
+        /*if (currentText.gameObject.activeSelf)
         {
-            Debug.Log("object active");
+            print("object active");
         }
         else
         {
-            Debug.Log("object inactive");
-        }
+            print("object inactive");
+        }*/
         nextText?.gameObject.SetActive(true);
     }
 }
