@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f1ddac4c8ccd4886b602dde4b8df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstText: {fileID: 117987302}
+  currentText: {fileID: 0}
   nextText: {fileID: 1198971704}
   displayDuration: 5
 --- !u!114 &117987301
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f1ddac4c8ccd4886b602dde4b8df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstText: {fileID: 130851260}
+  currentText: {fileID: 0}
   nextText: {fileID: 1775159280}
   displayDuration: 4
 --- !u!1 &379008595
@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f1ddac4c8ccd4886b602dde4b8df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstText: {fileID: 379008599}
+  currentText: {fileID: 0}
   nextText: {fileID: 1962973888}
   displayDuration: 3
 --- !u!114 &379008598
@@ -793,7 +793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771ea334a1231b4499e1a204415fb19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstText: {fileID: 535333368}
+  currentText: {fileID: 0}
   nextText: {fileID: 130851260}
   displayDuration: 6
   toEnable: {fileID: 1951263109}
@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f1ddac4c8ccd4886b602dde4b8df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstText: {fileID: 1125597012}
+  currentText: {fileID: 0}
   nextText: {fileID: 1146961750}
   displayDuration: 3
 --- !u!114 &1125597011
@@ -1210,7 +1210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f1ddac4c8ccd4886b602dde4b8df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstText: {fileID: 1146961750}
+  currentText: {fileID: 0}
   nextText: {fileID: 1287942750}
   displayDuration: 3
 --- !u!224 &1153669828 stripped
@@ -1269,7 +1269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f1ddac4c8ccd4886b602dde4b8df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstText: {fileID: 1198971704}
+  currentText: {fileID: 0}
   nextText: {fileID: 535333368}
   displayDuration: 4
 --- !u!114 &1198971703
@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f1ddac4c8ccd4886b602dde4b8df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstText: {fileID: 1287942750}
+  currentText: {fileID: 0}
   nextText: {fileID: 379008599}
   displayDuration: 4
 --- !u!1 &1321530460
@@ -1924,6 +1924,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1554904364
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1654302974890426010, guid: 70d0f214229bc8d4793e26a0adc38efd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -174.22314
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654302974890426010, guid: 70d0f214229bc8d4793e26a0adc38efd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -67.933716
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654302974890426010, guid: 70d0f214229bc8d4793e26a0adc38efd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.5652897
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654302974890426010, guid: 70d0f214229bc8d4793e26a0adc38efd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654302974890426010, guid: 70d0f214229bc8d4793e26a0adc38efd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654302974890426010, guid: 70d0f214229bc8d4793e26a0adc38efd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654302974890426010, guid: 70d0f214229bc8d4793e26a0adc38efd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654302974890426010, guid: 70d0f214229bc8d4793e26a0adc38efd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654302974890426010, guid: 70d0f214229bc8d4793e26a0adc38efd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654302974890426010, guid: 70d0f214229bc8d4793e26a0adc38efd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3850892481560471861, guid: 70d0f214229bc8d4793e26a0adc38efd, type: 3}
+      propertyPath: m_Name
+      value: PostProc
+      objectReference: {fileID: 0}
+    - target: {fileID: 3850892481560471861, guid: 70d0f214229bc8d4793e26a0adc38efd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 70d0f214229bc8d4793e26a0adc38efd, type: 3}
 --- !u!1 &1592378313
 GameObject:
   m_ObjectHideFlags: 0
@@ -2087,7 +2148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f1ddac4c8ccd4886b602dde4b8df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstText: {fileID: 1592378317}
+  currentText: {fileID: 0}
   nextText: {fileID: 0}
   displayDuration: 8
 --- !u!114 &1592378320
@@ -2249,7 +2310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f1ddac4c8ccd4886b602dde4b8df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstText: {fileID: 1648292225}
+  currentText: {fileID: 0}
   nextText: {fileID: 117987302}
   displayDuration: 3
 --- !u!114 &1648292224
@@ -2414,7 +2475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f1ddac4c8ccd4886b602dde4b8df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstText: {fileID: 1775159280}
+  currentText: {fileID: 0}
   nextText: {fileID: 1125597012}
   displayDuration: 4
 --- !u!114 &1775159279
@@ -2698,7 +2759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f1ddac4c8ccd4886b602dde4b8df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstText: {fileID: 1962973888}
+  currentText: {fileID: 0}
   nextText: {fileID: 1592378317}
   displayDuration: 5
 --- !u!114 &1962973887
@@ -3043,6 +3104,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1989270038}
+  - {fileID: 1554904364}
   - {fileID: 1517292932}
   - {fileID: 1648060879}
   - {fileID: 1326826491}

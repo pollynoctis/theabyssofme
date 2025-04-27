@@ -7,6 +7,6 @@ public class CorpseItemUse : ItemInteractableInInventory
     public override void OnInteract()
     {
         GameCrashPuzzleController.Instance.StartCrash();
-        print("corpse used");
+        print("game crash begins");
     }
 }

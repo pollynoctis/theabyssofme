@@ -7,6 +7,10 @@ using UnityEngine.UI;
 
 public class SavePuzzleManager : MonoBehaviour
 {
+    //ŠĪ IR VECA VERSIJA! NEIZMANTOT!
+    
+    
+    
     //private string cmdSpamDisabler;
     //[SerializeField] private Text debuggerText;
     

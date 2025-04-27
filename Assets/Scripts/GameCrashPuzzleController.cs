@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using System.IO;
 using TMPro;
+using System.Threading;
+
 
 public class GameCrashPuzzleController : MonoBehaviour
 {
@@ -32,6 +35,7 @@ public class GameCrashPuzzleController : MonoBehaviour
         print("crash started");
         RewriteSave();
         GenerateFilesDesktop();
+        SpamCmds();
     }
     /*
      отключение игры - игра фризует
@@ -51,36 +55,80 @@ public class GameCrashPuzzleController : MonoBehaviour
         if (File.Exists(filePath))
         {
             File.WriteAllText(filePath, "[corrupt]\n[ERROR 6C697665]\nSorry, something went wrong\n" +
-                                        "Check 'The Inside' for instructions. \n \n \n \n \n \n \n \n \n \n \n " +
-                                        "\n \n \n \n \n \n \n \n \n \n \n \nI am already inside you."); 
+                                        "Check 'The Inside' for instructions. " +
+                                        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                                        "I am already inside you."); 
         }
     }
 
     private void GenerateFilesDesktop()
     {
         debugger.text = "generating";
-    
         string desktopPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop), "TheInside");
-    
         if (!Directory.Exists(desktopPath))
         {
             Directory.CreateDirectory(desktopPath);
         }
-
-        string txtFilePath = Path.Combine(desktopPath, "body_frag.txt");
-
+        string txtFilePath = Path.Combine(desktopPath, "fragment_1.txt");
         File.WriteAllText(txtFilePath, 
-            "Your hands were cold when you picked it up.\n" +
-            "But that was not the first time.\n\n" +
-            "X: -21.4\nZ: 3.2\nY: [ROT13] -> avprf5.rk\n");
-    }
+            "Base64 hides what you seek,\nDecode the chain to see what's unique.\n\n\n" +
+            "SSB3b2tlIHVuZGVyIGdsb3ZlZCBoYW5kcywKQnJlYXRoIGNydXNoZWQsClNraW4gc3BsaXQgYnkgc2lsZW50IHByYXllcnMuCk5vIGZpZ2h0IOKAlCBqdXN0IG1lYXQg4oCUClJvdHRpbmcsIHdhcm0sIGZvcmdvdHRlbi4=");
+        txtFilePath = Path.Combine(desktopPath, "fragment_2.txt");
+        File.WriteAllText(txtFilePath,
+            "Rot47 twists the path you take,\nShift the letters to see what’s at stake.\n\n\n" +
+            "%96J 3FC:65 >J G@:46 :? D@7E D@:=[\n%66E9 8C:?5:?8 5FDE[\n}2:=D 4=2H:?8 9@==@H 8C@F?5]\nx 3=65 2 >2A 24C@DD E96:C =2F89E6C[\n{67E 369:?5 2E %wx#%* A246D 62DE[ $x)%*\\ux't ?@CE9]");
 
+        string sourceImagePath = "Assets/Visuals/main_menu.png";
+        string destImagePath = Path.Combine(desktopPath, "main_menu.png");
+        File.Copy(sourceImagePath, destImagePath, true);
+
+    }
     
     private IEnumerator FreezeForSeconds(float seconds)
     {
         Time.timeScale = 0f; 
         yield return new WaitForSecondsRealtime(seconds); 
         Time.timeScale = 1f;
+    }
+
+    private void StartGlitchAndAnimation()
+    {
+        
+    }
+
+    private void ExitGame()
+    {
+        
+    }
+
+    private void SpamCmds()
+    {
+        for (int i = 0; i < 2; i++) // logu daudzums
+        {
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = "cmd.exe",
+                Arguments = "/C exit", // logs uzreiz aizveras
+                UseShellExecute = true
+            };
+            Process.Start(psi);
+            Thread.Sleep(Random.Range(10, 100));
+        }
+
+        ProcessStartInfo anotherpsi = new ProcessStartInfo()
+        {
+            FileName = "cmd.exe",
+            Arguments = "/T:04 /K echo [Critical Save Error] & echo Save file corrupted. & echo Check the game directory.",
+            UseShellExecute = true
+
+        };
+        Process.Start(anotherpsi);
+        Application.Quit();
+    }
+
+    private void PasteImage()
+    {
+        
     }
 
     

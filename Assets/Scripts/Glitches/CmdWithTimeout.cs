@@ -1,6 +1,5 @@
 using System.Diagnostics;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
 
 public class CmdScript : MonoBehaviour
 {
@@ -8,7 +7,7 @@ public class CmdScript : MonoBehaviour
     void Start()
     {
         RunCmd();
-        Debug.Log("cmd is  now opening");
+        print("cmd is  now opening");
     }
 
     void RunCmd()
