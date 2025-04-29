@@ -29,12 +29,11 @@ public class SaveSystem : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
-
     void Start()
     {
         savePath = Path.Combine(Application.dataPath, "..", "Saves");
         
-        player = GameObject.Find("Milly");
+        player = GameObject.FindWithTag("Player");
         if (player == null)
         {
             Debug.LogError("player not found");
@@ -47,10 +46,9 @@ public class SaveSystem : MonoBehaviour
             string filePath = Path.Combine(savePath, "save.txt");
             if (!File.Exists(filePath))
             {
-                File.WriteAllText(filePath, "first load"); 
+                File.WriteAllText(filePath, "Clean"); 
             }
         }
-        //LoadCheckpoint();
     }
     
     public void SaveCheckpoint(string checkpointName, string sceneName)
@@ -79,27 +77,53 @@ public class SaveSystem : MonoBehaviour
             }
             yield return new WaitForSeconds(0.1f); 
             
-            player = GameObject.FindWithTag("Player");
+            /*player = GameObject.FindWithTag("Player");
             if (player == null)
             {
                 Debug.LogError("Player not found after scene load!");
                 yield break;
-            }
+            }*/
             checkpointPosition = new Vector2(float.Parse(positionFromText[1]), float.Parse(positionFromText[2]));
             player.transform.position = checkpointPosition;
-            Debug.Log($"Player loaded at {checkpointPosition}");
         }
     }
-
-    /*private void LoadPlayerPosition(Vector2 pos)
-    {
-        player.transform.position = pos;
-    }*/
-
+    
     public void ClearSaveData()
     {
         string filePath = Path.Combine(savePath, "save.txt");
         File.WriteAllText(filePath, "Clean");
         //clear all player prefs as well
     }
+
+    private void CheckScene(string sceneName)
+    {
+        savePath = Path.Combine(Application.dataPath, "..", "Saves");
+        string filePath = Path.Combine(savePath, "save.txt");
+        string saveFileData = File.ReadAllText(filePath);
+        if (saveFileData.Contains(GameCrashPuzzleController.solutionText))
+        {
+            
+        }
+        else if (saveFileData.Contains("Clean") /*|| contains any other checkpoint*/)
+        {
+            //load scene
+        }
+        else
+        {
+            //load weird scene?
+            //spam desktop
+        }
+        
+        /*switch (sceneName)
+        {
+            case "clean": //
+                break;
+            case "has solution text":
+                break;
+            
+        }*/
+        
+        
+    }
+    //if (nav solution text || ir tukšš && nedrīkst first load && nedrīkst būt clean) {spamo sūdus}
 }
