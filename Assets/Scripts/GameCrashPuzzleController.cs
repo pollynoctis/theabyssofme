@@ -17,7 +17,7 @@ public class GameCrashPuzzleController : MonoBehaviour
     //[SerializeField] private TMP_Text debugger;
     [SerializeField] private GameObject animObject;
 
-    public static string solutionText = "Your casket 30 65 Cemetery";
+    public static string solutionText = "Your casket Your casket 30 65 Cemetery";
     //______________instance related
     private static GameCrashPuzzleController _instance;
     public static GameCrashPuzzleController Instance { get { return _instance; } }
@@ -128,20 +128,9 @@ public class GameCrashPuzzleController : MonoBehaviour
         yield return new WaitForSecondsRealtime(seconds); 
         Time.timeScale = 1f;
         RewriteSave();
-        CreateCrashFlag();
         GenerateFilesDesktop();
         SpamCmds();
         ShowSystemPopup();
         Application.Quit();
     }
-    
-    private void CreateCrashFlag()
-    {
-        string savePath = Path.Combine(Application.dataPath, "..", "Saves");
-        string flagPath = Path.Combine(savePath, "crash.flag");
-        File.WriteAllText(flagPath, "true");
-        File.SetAttributes(flagPath, FileAttributes.Hidden);
-
-    }
-
 }
