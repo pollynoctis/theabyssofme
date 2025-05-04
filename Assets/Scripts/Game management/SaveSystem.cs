@@ -10,6 +10,7 @@ using TMPro;
 public class SaveSystem : MonoBehaviour
 {
     //public string sceneName; //should be empty
+    [SerializeField] private TMP_Text debugger;
     public Vector2 checkpointPosition;
     [CanBeNull] private GameObject player;
     private string savePath;
@@ -32,21 +33,30 @@ public class SaveSystem : MonoBehaviour
     void Start()
     {
         savePath = Path.Combine(Application.dataPath, "..", "Saves");
+        string flagPath = Path.Combine(savePath, "crash.flag");
         
-        player = GameObject.FindWithTag("Player");
-        if (player == null)
+        if (File.Exists(flagPath))
         {
-            Debug.LogError("player not found");
+            print("Crash flag detected. Triggering corrupted save logic.");
+            HandleCorruptedSave(); 
         }
-        
-        if (!Directory.Exists(savePath))
+        else
         {
-            Directory.CreateDirectory(savePath);
-            
-            string filePath = Path.Combine(savePath, "save.txt");
-            if (!File.Exists(filePath))
+            player = GameObject.FindWithTag("Player");
+            if (player == null)
             {
-                File.WriteAllText(filePath, "Clean"); 
+                Debug.LogError("player not found");
+            }
+        
+            if (!Directory.Exists(savePath))
+            {
+                Directory.CreateDirectory(savePath);
+            
+                string filePath = Path.Combine(savePath, "save.txt");
+                if (!File.Exists(filePath))
+                {
+                    File.WriteAllText(filePath, "Clean"); 
+                }
             }
         }
     }
@@ -60,6 +70,11 @@ public class SaveSystem : MonoBehaviour
     public void LoadCheckpoint()
     {
         StartCoroutine(LoadSceneAndSetPosition());
+        string flagPath = Path.Combine(savePath, "crash.flag");
+        if (File.Exists(flagPath))
+        {
+            File.Delete(flagPath);
+        }
     }
     private IEnumerator LoadSceneAndSetPosition()
     {
@@ -69,7 +84,7 @@ public class SaveSystem : MonoBehaviour
             string checkpointData = File.ReadAllText(filePath);
             string[] positionFromText = checkpointData.Split(" ");
             string sceneToLoad = positionFromText[3];
-            
+        
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
             while (!asyncLoad.isDone)
             {
@@ -77,12 +92,13 @@ public class SaveSystem : MonoBehaviour
             }
             yield return new WaitForSeconds(0.1f); 
             
-            /*player = GameObject.FindWithTag("Player");
+            player = GameObject.FindWithTag("Player");
             if (player == null)
             {
                 Debug.LogError("Player not found after scene load!");
                 yield break;
-            }*/
+            }
+
             checkpointPosition = new Vector2(float.Parse(positionFromText[1]), float.Parse(positionFromText[2]));
             player.transform.position = checkpointPosition;
         }
@@ -94,36 +110,20 @@ public class SaveSystem : MonoBehaviour
         File.WriteAllText(filePath, "Clean");
         //clear all player prefs as well
     }
-
-    private void CheckScene(string sceneName)
+    
+    private void HandleCorruptedSave()
     {
-        savePath = Path.Combine(Application.dataPath, "..", "Saves");
         string filePath = Path.Combine(savePath, "save.txt");
-        string saveFileData = File.ReadAllText(filePath);
-        if (saveFileData.Contains(GameCrashPuzzleController.solutionText))
+        string saveContent = File.ReadAllText(filePath);
+
+        if (saveContent.Contains(GameCrashPuzzleController.solutionText))
         {
+            SceneManager.LoadScene("Cemetery");
             
-        }
-        else if (saveFileData.Contains("Clean") /*|| contains any other checkpoint*/)
-        {
-            //load scene
         }
         else
         {
-            //load weird scene?
-            //spam desktop
+            SceneManager.LoadScene("FakeScene");
         }
-        
-        /*switch (sceneName)
-        {
-            case "clean": //
-                break;
-            case "has solution text":
-                break;
-            
-        }*/
-        
-        
     }
-    //if (nav solution text || ir tukšš && nedrīkst first load && nedrīkst būt clean) {spamo sūdus}
 }

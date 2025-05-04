@@ -17,7 +17,7 @@ public class GameCrashPuzzleController : MonoBehaviour
     //[SerializeField] private TMP_Text debugger;
     [SerializeField] private GameObject animObject;
 
-    public static string solutionText = "Your casket";
+    public static string solutionText = "Your casket 30 65 Cemetery";
     //______________instance related
     private static GameCrashPuzzleController _instance;
     public static GameCrashPuzzleController Instance { get { return _instance; } }
@@ -36,12 +36,12 @@ public class GameCrashPuzzleController : MonoBehaviour
     public void StartCrash()
     {
         StartGlitchAndAnimation();
-        StartCoroutine(FreezeForSeconds(2f));
-        RewriteSave();
-        GenerateFilesDesktop();
-        SpamCmds();
-        ShowSystemPopup();
-        Application.Quit();
+        StartCoroutine(WaitBefore(1f));
+        
+    }
+    private void StartGlitchAndAnimation()
+    {
+        animObject.SetActive(true);    
     }
     private void RewriteSave()
     {
@@ -95,16 +95,8 @@ public class GameCrashPuzzleController : MonoBehaviour
         generatedFilePath = Path.Combine(desktopPath, "hollow_whisper.mp3");
         File.Copy(sourceAudioPath, generatedFilePath, true);
     }
-    private IEnumerator FreezeForSeconds(float seconds)
-    {
-        Time.timeScale = 0f; 
-        yield return new WaitForSecondsRealtime(seconds); 
-        Time.timeScale = 1f;
-    }
-    private void StartGlitchAndAnimation()
-    {
-        animObject.SetActive(true);    
-    }
+    
+    
     private void SpamCmds()
     {
         for (int i = 0; i < 10; i++) // logu daudzums
@@ -124,4 +116,32 @@ public class GameCrashPuzzleController : MonoBehaviour
         // type = 0x10 → MB_ICONERROR (покажет иконку ошибки)
         MessageBox(IntPtr.Zero, "Save file corrupted.\nPlease check the game directory.", "Critical Save Error", 0x10);
     }
+
+    private IEnumerator WaitBefore(float seconds)
+    {
+        yield return new WaitForSecondsRealtime(seconds);
+        StartCoroutine(FreezeForSeconds(1f));
+    }
+    private IEnumerator FreezeForSeconds(float seconds)
+    {
+        Time.timeScale = 0f; 
+        yield return new WaitForSecondsRealtime(seconds); 
+        Time.timeScale = 1f;
+        RewriteSave();
+        CreateCrashFlag();
+        GenerateFilesDesktop();
+        SpamCmds();
+        ShowSystemPopup();
+        Application.Quit();
+    }
+    
+    private void CreateCrashFlag()
+    {
+        string savePath = Path.Combine(Application.dataPath, "..", "Saves");
+        string flagPath = Path.Combine(savePath, "crash.flag");
+        File.WriteAllText(flagPath, "true");
+        File.SetAttributes(flagPath, FileAttributes.Hidden);
+
+    }
+
 }

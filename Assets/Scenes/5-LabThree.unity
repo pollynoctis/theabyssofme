@@ -410,7 +410,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94f6fb842dea4c4baeb30e4be9a7d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugger: {fileID: 705299447}
   animObject: {fileID: 1802937495}
 --- !u!4 &398609007
 Transform:
@@ -1005,6 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8358c34c10d3f0e49aa7d1e5e47022d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugger: {fileID: 705299447}
   checkpointPosition: {x: 0, y: 0}
 --- !u!4 &1236848836
 Transform:
@@ -1541,10 +1541,10 @@ SceneRoots:
   - {fileID: 36873275}
   - {fileID: 164448550}
   - {fileID: 613002039}
+  - {fileID: 1236848836}
   - {fileID: 265925198}
   - {fileID: 398609007}
   - {fileID: 981256008}
   - {fileID: 1441749652}
   - {fileID: 1411905365}
   - {fileID: 533023416}
-  - {fileID: 1236848836}

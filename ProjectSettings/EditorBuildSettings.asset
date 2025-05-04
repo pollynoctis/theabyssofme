@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/5-LabThree.unity
     guid: ba293580633909745b789ebd8e2993be
+  - enabled: 1
+    path: Assets/Scenes/FakeScene.unity
+    guid: 8587da8cbd6f5c049b548fb853818b75
+  - enabled: 1
+    path: Assets/Scenes/Cemetery.unity
+    guid: 10f96bd074632ec4296c56fdcce9d4ab
   m_configObjects: {}
