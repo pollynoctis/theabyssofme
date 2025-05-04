@@ -9,8 +9,6 @@ using TMPro;
 
 public class SaveSystem : MonoBehaviour
 {
-    //public string sceneName; //should be empty
-    [SerializeField] private TMP_Text debugger;
     public Vector2 checkpointPosition;
     [CanBeNull] private GameObject player;
     private string savePath;
@@ -33,29 +31,30 @@ public class SaveSystem : MonoBehaviour
     void Start()
     {
         savePath = Path.Combine(Application.dataPath, "..", "Saves");
+    
         string flagPath = Path.Combine(savePath, "crash.flag");
-        
+
         if (File.Exists(flagPath))
         {
-            print("Crash flag detected. Triggering corrupted save logic.");
-            HandleCorruptedSave(); 
+            Debug.Log("Crash flag detected. Triggering corrupted save logic.");
+            HandleCorruptedSave(); // отдельный метод, см. ниже
         }
         else
         {
+            // обычная логика
             player = GameObject.FindWithTag("Player");
             if (player == null)
             {
                 Debug.LogError("player not found");
             }
-        
+
             if (!Directory.Exists(savePath))
             {
                 Directory.CreateDirectory(savePath);
-            
                 string filePath = Path.Combine(savePath, "save.txt");
                 if (!File.Exists(filePath))
                 {
-                    File.WriteAllText(filePath, "Clean"); 
+                    File.WriteAllText(filePath, "Clean");
                 }
             }
         }
@@ -70,11 +69,6 @@ public class SaveSystem : MonoBehaviour
     public void LoadCheckpoint()
     {
         StartCoroutine(LoadSceneAndSetPosition());
-        string flagPath = Path.Combine(savePath, "crash.flag");
-        if (File.Exists(flagPath))
-        {
-            File.Delete(flagPath);
-        }
     }
     private IEnumerator LoadSceneAndSetPosition()
     {
@@ -84,7 +78,7 @@ public class SaveSystem : MonoBehaviour
             string checkpointData = File.ReadAllText(filePath);
             string[] positionFromText = checkpointData.Split(" ");
             string sceneToLoad = positionFromText[3];
-        
+            
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
             while (!asyncLoad.isDone)
             {
@@ -98,7 +92,6 @@ public class SaveSystem : MonoBehaviour
                 Debug.LogError("Player not found after scene load!");
                 yield break;
             }
-
             checkpointPosition = new Vector2(float.Parse(positionFromText[1]), float.Parse(positionFromText[2]));
             player.transform.position = checkpointPosition;
         }
@@ -110,7 +103,7 @@ public class SaveSystem : MonoBehaviour
         File.WriteAllText(filePath, "Clean");
         //clear all player prefs as well
     }
-    
+
     private void HandleCorruptedSave()
     {
         string filePath = Path.Combine(savePath, "save.txt");
@@ -118,12 +111,17 @@ public class SaveSystem : MonoBehaviour
 
         if (saveContent.Contains(GameCrashPuzzleController.solutionText))
         {
+            Debug.Log("Solution found. Loading correct scene.");
             SceneManager.LoadScene("Cemetery");
-            
         }
         else
         {
+            Debug.LogWarning("Save file corrupted and no solution detected. Triggering alternate behavior.");
+            // Запускай фальшивую сцену, глитчи или снова вылет
             SceneManager.LoadScene("FakeScene");
         }
     }
+
+    
+    
 }
