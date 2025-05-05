@@ -109,19 +109,19 @@ public class SaveSystem : MonoBehaviour
         string filePath = Path.Combine(savePath, "save.txt");
         string saveContent = File.ReadAllText(filePath);
 
-        if (saveContent.Contains(GameCrashPuzzleController.solutionText))
+        if (saveContent.Contains(GameCrashPuzzleController.solutionText.ToLower()) || saveContent.Contains(GameCrashPuzzleController.solutionTextTwo.ToLower()))
         {
-            Debug.Log("Solution found. Loading correct scene.");
             SceneManager.LoadScene("Cemetery");
         }
         else
         {
-            Debug.LogWarning("Save file corrupted and no solution detected. Triggering alternate behavior.");
             // Запускай фальшивую сцену, глитчи или снова вылет
             SceneManager.LoadScene("FakeScene");
+            GameCrashPuzzleController.Instance.SpamTxt();
         }
     }
 
+    
     
     
 }

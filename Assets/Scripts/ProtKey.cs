@@ -13,7 +13,7 @@ public class ProtKey : ItemInteractableInInventory
 
     private void Start()
     {
-        player = GameObject.Find("PrototypeMainCharacter");
+        player = GameObject.FindWithTag("Player");
         houseOverlay = GameObject.Find("HouseOverlay");
         lockedDoor = GameObject.Find("HouseDoor");
 

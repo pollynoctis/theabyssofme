@@ -16,10 +16,12 @@ public class GameCrashPuzzleController : MonoBehaviour
     [DllImport("user32.dll", CharSet = CharSet.Auto)]
     private static extern int MessageBox(IntPtr hWnd, string text, string caption, int type);
     //______________animations, debugging
-    [SerializeField] private TMP_Text debugger;
+    //[SerializeField] private TMP_Text debugger;
     [SerializeField] private GameObject animObject;
 
-    public static string solutionText = "Your casket 30 65 Cemetery";
+    public static string solutionText = "your casket 30 65 cemetery";
+
+    public static string solutionTextTwo = "your casket thirty sixty-five cemetery";
     //______________instance related
     private static GameCrashPuzzleController _instance;
     public static GameCrashPuzzleController Instance { get { return _instance; } }
@@ -79,42 +81,42 @@ public class GameCrashPuzzleController : MonoBehaviour
     //________________________FILE 2
     File.WriteAllText(Path.Combine(desktopPath, "rot.txt"),
         "Rot47 twists the path you take,\nShift the letters to see what’s at stake." +
-        "\n\n\nx 4C2H=65 %wx#%* A246D E9C@F89 3:=6 2?5 CFDE[\n}2:=D A66=:?8 @77[ 3" +
-        "@?6D 8C@F?5 E@ 5FDE]\nx 82DA65 $x)%*\\ux't E:>6D E9C@F89 5:CE 2?5 DA:E[\n" +
-        "q67@C6 >J =F?8D 82G6 FA — E96J \"&x%]\n#6>6>36C E96D6 ?F>36CD[ 42CG65 :? " +
-        "D<:? —\n%96J 2C6 E96 >2C<6CD @7 H96C6 J@F 368:?]");
+        "\n\n\nx 4C2H=65 %wx#%* A246D E9C@F89 3:=6 2?5 CFDE[\n}2:=D A66=:?8 @77[ 3@?6D 8C@" +
+        "F?5 E@ 5FDE]\nx 82DA65 $x)%*\\ux't E:>6D E9C@F89 5:CE 2?5 DA:E[\nq67@C6 >J =F?8D " +
+        "82G6 FA — E96J BF:E]\n#6>6>36C E96D6 ?F>36CD[ 42CG65 :? D<:? —\n%96J 2C6 E96 >2C<" +
+        "6CD @7 H96C6 J@F 368:?]");
     //________________________FILE 3
     File.WriteAllText(Path.Combine(desktopPath, "hint.txt"),
         "If memory fails, listen to the breathing grave.\nIf sight deceives, " +
         "bend the mirror.\nIf you forget yourself, the soil remembers.");
 
     //________________________ IMAGE FILE ________________________
-    debugger.text = "Trying to load image from Resources...";
+    //debugger.text = "Trying to load image from Resources...";
     Texture2D image = Resources.Load<Texture2D>("PuzzleMaterials/light_in_the_mirror");
     
     if (image != null)
     {
-        debugger.text = "generating the image";
+        //debugger.text = "generating the image";
         byte[] pngData = image.EncodeToPNG();
         if (pngData == null || pngData.Length == 0)
         {
-            debugger.text = "PNG data is null or empty!";
+            //debugger.text = "PNG data is null or empty!";
             return;
         }
         try
         {
             File.WriteAllBytes(Path.Combine(desktopPath, "light_in_the_mirror.png"), pngData);
-            debugger.text = "generated";
+            //debugger.text = "generated";
         }
         catch (Exception ex)
         {
-            debugger.text = "File write failed: " + ex.Message;
+            //debugger.text = "File write failed: " + ex.Message;
             Debug.LogError("File write failed: " + ex);
         }
     }
     else
     {
-        debugger.text="Image not found in Resources/PuzzleMaterials/light_in_the_mirror";
+        //debugger.text="Image not found in Resources/PuzzleMaterials/light_in_the_mirror";
     }
 
     //________________________ AUDIO FILE ________________________
@@ -159,5 +161,14 @@ public class GameCrashPuzzleController : MonoBehaviour
         SpamCmds();
         ShowSystemPopup();
         Application.Quit();
+    }
+    public void SpamTxt()
+    {
+        string desktopPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+        for (int i = 0; i < 50; i++) 
+        {
+            string filePath = Path.Combine(desktopPath, $"lostchild_{i}.txt");
+            File.WriteAllText(filePath, "She is disappointed.\nYou forgot her again.\n");
+        }
     }
 }
