@@ -43,6 +43,7 @@ public class LeucotomeInPuzzle : MonoBehaviour
         {
             Debug.Log("wrong spot");
             GameObject.Find("LobotomyPuzzle").GetComponent<LobotomyPuzzleController>().StartCoroutine("ScreenShake");
+            
         }
     }
     
