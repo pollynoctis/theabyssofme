@@ -9,8 +9,9 @@ public class LobotomyPuzzleController : MonoBehaviour
     [SerializeField] private GameObject keyToEnable;
     
     private CinemachineBasicMultiChannelPerlin noise;
-    
 
+
+    [SerializeField] private AudioSource source;
     public AudioClip hitSound;
 
 

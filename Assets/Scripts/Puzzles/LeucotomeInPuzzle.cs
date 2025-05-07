@@ -4,7 +4,9 @@ using UnityEngine;
 public class LeucotomeInPuzzle : MonoBehaviour
 {
     [SerializeField] private Transform hitPoint; // Точка удара на инструменте
-    [SerializeField] private float hitRadius = 0.1f; // Радиус проверки попадания
+    [SerializeField] private float hitRadius = 0.1f; 
+    [SerializeField] private AudioSource source;// Радиус проверки попадания
+    [SerializeField] private AudioClip incorrectHit;
     private bool isDragging = false;
     
 
@@ -30,18 +32,19 @@ public class LeucotomeInPuzzle : MonoBehaviour
     {
         Collider2D targetCollider = Physics2D.OverlapCircle(hitPoint.position, hitRadius);
 
-        if (targetCollider == null) 
+        /*if (targetCollider == null) 
         {
             Debug.LogError("no collider!");
-        }
+        }*/
         if (targetCollider != null && targetCollider.CompareTag("CorrectHitArea"))
         {
-            Debug.Log("lobotomy point");
+            //Debug.Log("lobotomy point");
             GameObject.Find("LobotomyPuzzle").GetComponent<LobotomyPuzzleController>().CorrectHit();
         }
         else
         {
-            Debug.Log("wrong spot");
+            source.PlayOneShot(incorrectHit);
+            //Debug.Log("wrong spot");
             GameObject.Find("LobotomyPuzzle").GetComponent<LobotomyPuzzleController>().StartCoroutine("ScreenShake");
             
         }
