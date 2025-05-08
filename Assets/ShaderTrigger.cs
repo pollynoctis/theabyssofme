@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
-public class ShaderTrigger : MonoBehaviour
+
+public class ShaderTrigger : TriggerObject
 {
     public Material glitchMateterial;
     public float noiseAmount, glitchStrength, effectTime;

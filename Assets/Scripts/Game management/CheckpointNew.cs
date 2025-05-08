@@ -5,20 +5,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(BoxCollider2D))]
-
-public class Checkpoint : MonoBehaviour
+public class Checkpoint : TriggerObject
 {
     [SerializeField] private string checkpointName;
     [SerializeField] private TMP_Text savingText;
     private string sceneName;
     private SaveSystem savesSys;
-    
-    private void Reset()
-    {
-        var collider = GetComponent<BoxCollider2D>();
-        collider.isTrigger = true;
-    }
     private void Start()
     {
         savesSys = FindObjectOfType<SaveSystem>();

@@ -1,8 +1,7 @@
 using UnityEngine;
 using System.IO;
 
-[RequireComponent(typeof(BoxCollider2D))]
-public class TriggerZone : MonoBehaviour
+public class PuzzleTriggerEnabler : TriggerObject
 {
     [SerializeField] private GameObject objectToActivate;
     private string puzzleEnabledKey = "PuzzleEnabled";
