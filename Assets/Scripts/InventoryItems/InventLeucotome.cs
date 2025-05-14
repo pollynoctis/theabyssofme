@@ -3,13 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Leucotome : ItemInteractableInInventory
+public class InventLeucotome : ItemInteractableInInventory
 {
     private PauseMenuToggler menuToggler;
 
     public override void OnInteract()
     {
-        print("clicked");
         menuToggler = FindObjectOfType<PauseMenuToggler>();
         menuToggler.ToggleMenu(); //disable inventory visibility
         OverlayPuzzleManager puzzleManager = FindObjectOfType<OverlayPuzzleManager>();
