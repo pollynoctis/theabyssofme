@@ -3,31 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//[RequireComponent(typeof(BoxCollider2D))]
 public class GlitchShaderController : MonoBehaviour
 {
    public Material glitchMateterial;
    public float noiseAmount, glitchStrength;
    
-   private void Update()
+   private void OnEnable()
    {
       glitchMateterial.SetFloat("_NoiseAmount", noiseAmount);
-      
       glitchMateterial.SetFloat("_GlitchStrength", glitchStrength);
    }
-   /*private void OnTriggerEnter2D(Collider2D other)
+   
+   private void OnDisable()
    {
-      if (other.CompareTag("Player"))
-      {
-         glitchMateterial.SetFloat("NoiseAmount", noiseAmount);
-         glitchMateterial.SetFloat("GlitchStrength", glitchStrength);
-         StartCoroutine(Waiting());
-      }
+      glitchMateterial.SetFloat("_NoiseAmount", 0);
+      glitchMateterial.SetFloat("_GlitchStrength", 0);
    }
-   private IEnumerator Waiting()
-   {
-      yield return new WaitForSeconds(effectTime);
-      glitchMateterial.SetFloat("NoiseAmount", 0);
-      glitchMateterial.SetFloat("GlitchStrength", 0);
-   }*/
 }

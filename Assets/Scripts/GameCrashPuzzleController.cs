@@ -16,7 +16,7 @@ public class GameCrashPuzzleController : MonoBehaviour
     [DllImport("user32.dll", CharSet = CharSet.Auto)]
     private static extern int MessageBox(IntPtr hWnd, string text, string caption, int type);
     //______________animations, debugging
-    //[SerializeField] private TMP_Text debugger;
+    [SerializeField] private TMP_Text debugger;
     [SerializeField] private GameObject animObject;
 
     public static string solutionText = "your casket 30 65 cemetery";
@@ -96,27 +96,28 @@ public class GameCrashPuzzleController : MonoBehaviour
     
     if (image != null)
     {
-        //debugger.text = "generating the image";
+        debugger.text = "generating the image";
         byte[] pngData = image.EncodeToPNG();
+        debugger.text = "generating the image 2";
         if (pngData == null || pngData.Length == 0)
         {
-            //debugger.text = "PNG data is null or empty!";
+            debugger.text = "PNG data is null or empty!";
             return;
         }
         try
         {
             File.WriteAllBytes(Path.Combine(desktopPath, "light_in_the_mirror.png"), pngData);
-            //debugger.text = "generated";
+            debugger.text = "generated";
         }
         catch (Exception ex)
         {
-            //debugger.text = "File write failed: " + ex.Message;
+            debugger.text = "File write failed: " + ex.Message;
             Debug.LogError("File write failed: " + ex);
         }
     }
     else
     {
-        //debugger.text="Image not found in Resources/PuzzleMaterials/light_in_the_mirror";
+        debugger.text="Image not found in Resources/PuzzleMaterials/light_in_the_mirror";
     }
 
     //________________________ AUDIO FILE ________________________
