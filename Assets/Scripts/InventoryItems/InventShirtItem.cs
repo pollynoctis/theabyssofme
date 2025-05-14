@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class InventShirtItem : ItemInteractableInInventory
 {
     public override void OnInteract()
     {
-        
-        TextManager.Instance.ShowMessage("It stinks.");
+        TextManager.Instance.ShowTextSequence(textLines, isHint, textDuration);
     }
 }

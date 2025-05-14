@@ -45,3 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 21300000, guid: 265517efc0fe4b941b64118e815b7fe5, type: 3}
+  textLines:
+  - Please... No... I don't want to look at it. It stinks...
+  textDuration: 5
+  isHint: 0

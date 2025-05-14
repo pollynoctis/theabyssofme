@@ -15,13 +15,15 @@ public class GameCrashPuzzleController : MonoBehaviour
     //_____________errorbox related
     [DllImport("user32.dll", CharSet = CharSet.Auto)]
     private static extern int MessageBox(IntPtr hWnd, string text, string caption, int type);
+    
     //______________animations, debugging
     [SerializeField] private TMP_Text debugger;
     [SerializeField] private GameObject animObject;
-
+    
+    //______________puzzle related
     public static string solutionText = "your casket 30 65 cemetery";
-
     public static string solutionTextTwo = "your casket thirty sixty-five cemetery";
+    
     //______________instance related
     private static GameCrashPuzzleController _instance;
     public static GameCrashPuzzleController Instance { get { return _instance; } }
@@ -37,6 +39,7 @@ public class GameCrashPuzzleController : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
+    
     public void StartCrash()
     {
         StartGlitchAndAnimation();
@@ -139,12 +142,11 @@ public class GameCrashPuzzleController : MonoBehaviour
             Thread.Sleep(Random.Range(10, 100));
         }
     }
-    public void ShowSystemPopup()
+    private void ShowSystemPopup() //was public before
     {
         // type = 0x10 → MB_ICONERROR (покажет иконку ошибки)
         MessageBox(IntPtr.Zero, "Save file corrupted.\nPlease check the game directory.", "Critical Save Error", 0x10);
     }
-    
     private IEnumerator WaitBefore(float seconds)
     {
         yield return new WaitForSecondsRealtime(seconds);

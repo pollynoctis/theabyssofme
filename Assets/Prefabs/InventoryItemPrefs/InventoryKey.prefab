@@ -45,3 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 21300000, guid: a1bd26c163ddc574a9cf843fa7692cea, type: 3}
+  textLines:
+  - I can't open my eyes with this, you know...
+  textDuration: 5
+  isHint: 0

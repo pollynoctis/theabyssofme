@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProtKey : ItemInteractableInInventory
+public class InventKey : ItemInteractableInInventory
 {
     private GameObject player;
     private GameObject lockedDoor;
@@ -41,7 +41,7 @@ public class ProtKey : ItemInteractableInInventory
         else
         {
             //unlockMessage.SetActive(true);
-            TextManager.Instance.ShowMessage("KeyUseMessage");
+            TextManager.Instance.ShowTextSequence(textLines, false, textDuration);
         }
     }
 }

@@ -12,12 +12,6 @@ public class RandomDeathText : MonoBehaviour
 
     public void OnEnable()
     {
-        if (executionerText == null || possibleLines.Length == 0)
-        {
-            Debug.LogWarning("DialogueText or possible lines not set.");
-            return;
-        }
-
         int randomIndex = Random.Range(0, possibleLines.Length);
         executionerText.text = possibleLines[randomIndex];
     }
