@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DisableOnPress : MonoBehaviour
 {
+    //es minu, ka šis ir domāts, lai izslēgtu deathscreen
     [SerializeField] private GameObject objectToDisable;
     [SerializeField] private SimpleMovement movement;
 

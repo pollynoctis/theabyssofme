@@ -7,6 +7,7 @@ public class LobotomyPuzzleController : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera cinemachineCamera;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject keyToEnable;
+    [SerializeField] private GameObject objectToEnable;
     
     private CinemachineBasicMultiChannelPerlin noise;
 
@@ -37,11 +38,12 @@ public class LobotomyPuzzleController : MonoBehaviour
         keyToEnable.transform.position = keySpawn;
         keyToEnable.SetActive(true);
         
-        
+        objectToEnable.SetActive(true);
         gameObject.SetActive(false);
         
         
         player.GetComponent<Rigidbody2D>().isKinematic = false;
+        
         inventManager.RemoveItem(leuctome);
         
         //pievienot skaņu un tumšo ekrānu
@@ -51,11 +53,11 @@ public class LobotomyPuzzleController : MonoBehaviour
     {
         //Debug.Log("shake");
 
-        /*if (noise == null)
+        if (noise == null)
         {
             Debug.LogError("CinemachineBasicMultiChannelPerlin! not found");
             yield break;
-        }*/ //debugging for cinemachine
+        } //debugging for cinemachine
 
         noise.m_AmplitudeGain = 2f; 
         noise.m_FrequencyGain = 3f;

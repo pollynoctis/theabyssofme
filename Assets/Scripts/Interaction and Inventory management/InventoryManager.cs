@@ -37,8 +37,10 @@ public class InventoryManager : MonoBehaviour
         foreach(GameObject item in items)
         {
             GameObject newSlot = Instantiate(inventorySlot.gameObject, inventory);
+            
             newSlot.GetComponent<InventorySlotScript>().AssignItem(item);
             newSlot.transform.position = Vector3.zero;
+            item.transform.position = new Vector3(0, 0, 0);
         }
     }
     

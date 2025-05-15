@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ColliderVisualiser : MonoBehaviour
 {
+    
     private void OnDrawGizmos()
     {
         BoxCollider2D col = GetComponent<BoxCollider2D>();

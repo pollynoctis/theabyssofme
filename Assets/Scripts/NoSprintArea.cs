@@ -29,5 +29,6 @@ public class NoSprintArea : MonoBehaviour
         movement.enabled = false;
         //Time.timeScale = 0f;
         objectToEnable.SetActive(true);
+        TextManager.Instance.StopSequence();
     }
 }

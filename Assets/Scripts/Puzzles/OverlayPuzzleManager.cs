@@ -6,6 +6,7 @@ public class OverlayPuzzleManager : MonoBehaviour
 {
     [SerializeField] private GameObject puzzleOverlay;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject objectToDisable;
     void Start()
     {
         puzzleOverlay.SetActive(false);
@@ -13,6 +14,7 @@ public class OverlayPuzzleManager : MonoBehaviour
 
     public void StartPuzzle()
     {
+        objectToDisable.SetActive(false);
         puzzleOverlay.transform.position = player.transform.position;
         puzzleOverlay.SetActive(true);
     }
