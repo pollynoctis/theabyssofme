@@ -317,6 +317,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74469bb926b451c4b8c5be597ea1df80, type: 3}
+--- !u!1 &159009764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 159009765}
+  - component: {fileID: 159009766}
+  m_Layer: 0
+  m_Name: Afterpuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &159009765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159009764}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 366762888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &159009766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159009764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026b968433a6ae74aa47e1701b4b7b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLines:
+  - 'Executioner: You know your diagnosis. You need to find the pills.'
+  textDuration: -1
+  isHint: 0
 --- !u!1 &274516133
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,6 +765,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2833284215629858027, guid: 3682a05b1e003cc4f995efe09df8d079, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1825612151}
+    - targetCorrespondingSourceObject: {fileID: 2833284215629858027, guid: 3682a05b1e003cc4f995efe09df8d079, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 159009765}
+    - targetCorrespondingSourceObject: {fileID: 2833284215629858027, guid: 3682a05b1e003cc4f995efe09df8d079, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 932027251}
     - targetCorrespondingSourceObject: {fileID: 8545651155164298127, guid: 3682a05b1e003cc4f995efe09df8d079, type: 3}
       insertIndex: -1
       addedObject: {fileID: 489254701}
@@ -725,6 +782,11 @@ PrefabInstance:
 --- !u!4 &366762887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8545651155164298127, guid: 3682a05b1e003cc4f995efe09df8d079, type: 3}
+  m_PrefabInstance: {fileID: 366762886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &366762888 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2833284215629858027, guid: 3682a05b1e003cc4f995efe09df8d079, type: 3}
   m_PrefabInstance: {fileID: 366762886}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &444228140
@@ -1389,6 +1451,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7611591591220872753, guid: 1cf5eecbf17254142bf729efa9409266, type: 3}
   m_PrefabInstance: {fileID: 808755284}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &932027250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 932027251}
+  - component: {fileID: 932027252}
+  m_Layer: 0
+  m_Name: Before next scene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &932027251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932027250}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 366762888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &932027252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932027250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026b968433a6ae74aa47e1701b4b7b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLines:
+  - 'Executioner: You''re an incubator. You''re just meat. That''s your job.
+
+'
+  textDuration: -1
+  isHint: 0
 --- !u!1 &1173465808
 GameObject:
   m_ObjectHideFlags: 0
@@ -2902,6 +3014,86 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
   isCut: 0
+--- !u!1 &1825612150
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1825612151}
+  - component: {fileID: 1825612152}
+  m_Layer: 0
+  m_Name: Dial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1825612151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825612150}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 366762888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1825612152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825612150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026b968433a6ae74aa47e1701b4b7b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLines:
+  - 'Executioner: You''re not sick. You''re just tired. You''re too sensitive. You
+    need to walk more. You need to eat. You need to sleep. You need to stop lying.'
+  - 'Executioner: But here''s one little truth. You actually are a little bit sick.
+    But not in the way you want. Not in a beautiful, fragile, tender way. You''re
+    sick in a dirty way. With rot. Your blood has congealed, your organs aren''t
+    working, and something is growing in your lungs.
+
+'
+  - 'Executioner: Do you feel how your skin is losing its integrity? How something
+    is crawling under it?
+
+'
+  - 'Executioner: Or maybe... maybe there''s something living inside you?
+
+'
+  - 'Executioner: Oh, you feel it, right? How it moves? How it bites? How it grows
+    at your expense?
+
+'
+  - 'Executioner: Congrats. I have good news for you.
+
+'
+  - 'pause
+
+'
+  - 'Executioner: But you are disgusted, aren''t you? You don''t want to feel it.
+    You want to pull it out.
+
+'
+  - 'pause, make milly shake
+
+'
+  - "Executioner: No, no. Not now. Let\u2019s check you first.\r\n"
+  textDuration: -1
+  isHint: 0
 --- !u!1 &1853881087
 GameObject:
   m_ObjectHideFlags: 0

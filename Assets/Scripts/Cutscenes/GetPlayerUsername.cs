@@ -7,20 +7,16 @@ using TMPro;
 
 public class GetPlayerUsername : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textToShow;
+    [SerializeField] private TMP_Text textToShow;
+    [TextArea]
+    [SerializeField] private string textForUsername;
     private string username = System.Environment.UserName;
 
     private void Awake()
     {
-        textToShow.text = "Hello... " + username + "...";
+        textToShow.text = textForUsername + username + "...";
     }
 
-    void Start()
-    {
-        
-        
-        
-
-    }
+    
     
 }

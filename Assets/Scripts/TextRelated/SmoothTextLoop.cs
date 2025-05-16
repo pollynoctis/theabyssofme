@@ -5,7 +5,7 @@ using UnityEngine;
 public class SmoothTextLoop : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI TextGameObject;
-    [SerializeField] private float textSpeed = 0.03f;
+    [SerializeField] private float secondsPerLettter = 0.03f;
     private string text;
     private bool isSkipping;
     
@@ -38,7 +38,7 @@ public class SmoothTextLoop : MonoBehaviour
                 yield break;
             }
             TextGameObject.text += abc;
-            yield return new WaitForSeconds(textSpeed); //laiks katram burtam
+            yield return new WaitForSeconds(secondsPerLettter); //laiks katram burtam
         }
     }
 }
