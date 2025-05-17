@@ -7,6 +7,8 @@ public class ScalpelInPuzzle : MonoBehaviour
     [SerializeField] private float shakeStrength = 0.05f;
     [SerializeField] private Transform hitPoint;
     [SerializeField] private float hitRadius = 0.1f;
+    [SerializeField] private XRayPuzzleController controller;
+    [SerializeField] private CutLine cutLine;
     
     private bool isDragging = false;
     private void Update()

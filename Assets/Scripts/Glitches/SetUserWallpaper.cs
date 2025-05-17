@@ -43,8 +43,5 @@ public class SetUserWallpaper : MonoBehaviour
         Debug.Log($"[WallpaperSetter] Обои установлены: {tempImagePath}");
     }
 
-    public void SettTheWallpaper()
-    {
-        //WallpaperSetter.SetWallpaper("wallpaper"); // если файл называется "wallpaper.png"
-    }
+    
 }

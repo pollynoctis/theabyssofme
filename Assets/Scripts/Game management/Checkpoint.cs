@@ -5,7 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class Checkpoint : TriggerObject
+public class Checkpoint : ParentTriggerObject
 {
     [SerializeField] private string checkpointName;
     [SerializeField] private TMP_Text savingText;

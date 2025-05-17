@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundTrigger : TriggerObject
+public class SoundTrigger : ParentTriggerObject
 {
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip clipToPlay;

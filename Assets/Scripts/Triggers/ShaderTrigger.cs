@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ShaderTrigger : TriggerObject
+public class ShaderTrigger : ParentTriggerObject
 {
     public Material glitchMateterial;
     public float noiseAmount, glitchStrength, effectTime;

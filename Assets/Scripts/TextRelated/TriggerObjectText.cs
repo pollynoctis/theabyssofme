@@ -23,6 +23,4 @@ public class TriggerObjectText : MonoBehaviour
             playedOnce = true;
         }
     }
-
-    
 }

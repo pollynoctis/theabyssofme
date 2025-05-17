@@ -12,7 +12,6 @@ public class AutomaticTextChange : MonoBehaviour
     public float displayDuration = 3f;
     public void OnEnable()
     {
-        //firstText.gameObject.SetActive(true);
         StartCoroutine(DeactivateTextAfterDelay());
     }
     protected virtual IEnumerator DeactivateTextAfterDelay()

@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
-public class PlayerTeleporter : MonoBehaviour
+public class PlayerTeleporter : ParentTriggerObject
 {
     [SerializeField] private Transform teleportDestination;
     [SerializeField] private GameObject executioner;
-    private void Reset()
-    {
-        var collider = GetComponent<BoxCollider2D>();
-        collider.isTrigger = true;
-    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

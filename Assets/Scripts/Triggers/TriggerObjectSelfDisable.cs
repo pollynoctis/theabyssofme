@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ObjectSelfDisabledOnTrigger : TriggerObject
+public class TriggerObjectSelfDisable : ParentTriggerObject
 {
     [SerializeField] private float timeBeforeDisable;
     

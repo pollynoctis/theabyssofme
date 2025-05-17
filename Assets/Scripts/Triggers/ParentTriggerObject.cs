@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
-public abstract class TriggerObject : MonoBehaviour
+public abstract class ParentTriggerObject : MonoBehaviour
 {
     //this is parent script for all trigger scripts
     private void Reset()
@@ -11,5 +11,4 @@ public abstract class TriggerObject : MonoBehaviour
         var collider = GetComponent<BoxCollider2D>();
         collider.isTrigger = true;
     }
-    
 }

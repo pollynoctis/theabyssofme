@@ -29,15 +29,15 @@ public class LeucotomeInPuzzle : MonoBehaviour
 
     private void Update()
     {
-        if (Camera.main ==null)
+        /*if (Camera.main ==null)
         {
             Debug.Log("no main camera found!");
-        }
+        }*/
         if (isDragging)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log(Input.mousePosition);
-            Debug.Log(mousePosition);
+            //Debug.Log(Input.mousePosition);
+            //Debug.Log(mousePosition);
             mousePosition.z = 0f;
             transform.position = mousePosition;
         }

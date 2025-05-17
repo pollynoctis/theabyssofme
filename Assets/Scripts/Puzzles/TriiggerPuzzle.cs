@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.IO;
 
-public class PuzzleTriggerEnabler : TriggerObject
+public class TriiggerPuzzle : ParentTriggerObject
 {
     [SerializeField] private GameObject objectToActivate;
     private string puzzleEnabledKey = "PuzzleEnabled";

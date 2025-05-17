@@ -1575,7 +1575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5382497948630271260, guid: 8ac3e1b8a91578840a68c48f5a929af7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 46.9
+      value: 43.95
       objectReference: {fileID: 0}
     - target: {fileID: 5628604843400857910, guid: 8ac3e1b8a91578840a68c48f5a929af7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1583,7 +1583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5628604843400857910, guid: 8ac3e1b8a91578840a68c48f5a929af7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 46.9
+      value: 43.95
       objectReference: {fileID: 0}
     - target: {fileID: 7289264122656548834, guid: 8ac3e1b8a91578840a68c48f5a929af7, type: 3}
       propertyPath: m_Follow
@@ -5604,7 +5604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToDisable: {fileID: 2042927433}
-  movement: {fileID: 4694997563575889209}
+  playerMovement: {fileID: 0}
 --- !u!4 &1529145518592088466
 Transform:
   m_ObjectHideFlags: 0
@@ -56100,7 +56100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7636859212046335249, guid: 1fa674c61d899d34cae65114acfedc83, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 46.9
+      value: 43.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

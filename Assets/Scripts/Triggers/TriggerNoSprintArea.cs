@@ -3,17 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
-public class NoSprintArea : MonoBehaviour
+public class TriggerNoSprintArea : ParentTriggerObject
 {
     [SerializeField] private SimpleMovement movement;
     [SerializeField] private GameObject objectToEnable;
-    private void Reset()
-    {
-        var collider = GetComponent<BoxCollider2D>();
-        collider.isTrigger = true;
-    }
-
+    
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player") && movement.isRunning)

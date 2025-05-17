@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerObjectEnabler : TriggerObject
+public class TriggerObjectEnabler : ParentTriggerObject
 {
     //script for trigger objects
     [SerializeField] private GameObject objectToEnable;

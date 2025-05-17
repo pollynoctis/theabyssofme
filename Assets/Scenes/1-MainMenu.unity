@@ -769,7 +769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextGameObject: {fileID: 194602377}
-  textSpeed: 0.06
+  secondsPerLettter: 0.06
 --- !u!114 &194602377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,7 +790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\n\n\n\n\r\n\n\n\r\nPlease take care.\r\n\u2014 Millie"
+  m_text: "\n\n\n\n\n\r\n\n\n\r\nPlease take care.\r\n\u2014 Milly"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8fbab88bba19844ab908729b3968b94, type: 2}
   m_sharedMaterial: {fileID: 604178944882740186, guid: b8fbab88bba19844ab908729b3968b94, type: 2}
@@ -881,7 +881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentText: {fileID: 0}
   nextText: {fileID: 638248765}
-  displayDuration: 3.8
+  displayDuration: 3.5
 --- !u!1 &205481669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,7 +1261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextGameObject: {fileID: 324446087}
-  textSpeed: 0.06
+  secondsPerLettter: 0.06
 --- !u!114 &324446087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1375,7 +1375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentText: {fileID: 0}
   nextText: {fileID: 888049035}
-  displayDuration: 17.5
+  displayDuration: 15
 --- !u!1 &361111392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,7 +1780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextGameObject: {fileID: 404621609}
-  textSpeed: 0.06
+  secondsPerLettter: 0.06
 --- !u!114 &404621609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2524,7 +2524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextGameObject: {fileID: 638248765}
-  textSpeed: 0.06
+  secondsPerLettter: 0.06
 --- !u!114 &638248765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2546,8 +2546,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: '
-
-
 
 
 
@@ -3658,7 +3656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextGameObject: {fileID: 888049035}
-  textSpeed: 0.06
+  secondsPerLettter: 0.06
 --- !u!114 &888049035
 MonoBehaviour:
   m_ObjectHideFlags: 0
