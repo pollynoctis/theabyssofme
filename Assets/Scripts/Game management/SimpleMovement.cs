@@ -8,11 +8,10 @@ public class SimpleMovement : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private SpriteRenderer renderer;
+    [SerializeField] private SpriteRenderer rendererLight;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speed = 10f;
     [SerializeField] private float accelaration = 2f;
-
-    [SerializeField] private GameObject playerFront, playerSide, playerSideFlipped,playerBack;
 
     private Vector2 movement;
 
@@ -20,36 +19,15 @@ public class SimpleMovement : MonoBehaviour
 
     void Update()
     {
-        /*anim.SetFloat("MovementX", Input.GetAxisRaw("Horizontal"));
-        anim.SetFloat("MovementY", Input.GetAxisRaw("Vertical"));
-        renderer.flipX = Input.GetAxisRaw("Horizontal") < 0;*/
-        //executionerMovement.LateMove(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (movement.x < 0)
-        {
-            playerSideFlipped.SetActive(true);
-            playerSide.SetActive(false); playerBack.SetActive(false); playerFront.SetActive(false);
-        }
-        if (movement.x > 0 )
-        {
-            playerSide.SetActive(true);
-            playerSideFlipped.SetActive(false); playerBack.SetActive(false); playerFront.SetActive(false);
-        }
-        if (movement.y < 0)
-        {
-            playerFront.SetActive(true);
-            playerSideFlipped.SetActive(false); playerSide.SetActive(false); playerBack.SetActive(false);
-        } 
-        if (movement.y > 0)
-        {
-            playerBack.SetActive(true);
-            
-            
-            playerSideFlipped.SetActive(false); playerSide.SetActive(false); playerFront.SetActive(false);
-        }
+        anim.SetFloat("MovementX", movement.x);
+        anim.SetFloat("MovementY", movement.y);
+        anim.SetBool("isMoving", movement.sqrMagnitude > 0.01f);
+
+        renderer.flipX = movement.x < 0;
+        rendererLight.flipX = movement.x < 0;
         
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -61,6 +39,5 @@ public class SimpleMovement : MonoBehaviour
             rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
             isRunning = false;
         }
-        
     }
 }
