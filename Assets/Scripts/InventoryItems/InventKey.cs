@@ -42,6 +42,7 @@ public class InventKey : ItemInteractableInInventory
         {
             //unlockMessage.SetActive(true);
             TextManager.Instance.ShowTextSequence(textLines, false, textDuration);
+            TextManager.Instance.DisableIsDisplaying();
         }
     }
 }

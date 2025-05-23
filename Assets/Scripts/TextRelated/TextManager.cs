@@ -37,6 +37,7 @@ public class TextManager : MonoBehaviour
         if (!isDisplaying && isHint)
         {
             StartCoroutine(DisplayQueue(upperTextObject));
+            print("showing the message");
         }
         else if (!isDisplaying)
         {
@@ -53,15 +54,26 @@ public class TextManager : MonoBehaviour
 
     private IEnumerator DisplayQueue(TMP_Text textPositioned)
     {
+        print("showing the message - ienumerator");
         isDisplaying = true;
         while (textQueue.Count > 0)
         {
+            print("while loop");
             var (text, duration) = textQueue.Dequeue();
             textPositioned.text = text;
             textPositioned.gameObject.SetActive(true);
             yield return new WaitForSeconds(duration);
+            print("waiting done");
             textPositioned.gameObject.SetActive(false);
         }
+        print("loop done");
+        isDisplaying = false;
+        print("isDisplaying = false");
+    }
+
+    public void DisableIsDisplaying()
+    {
+        print("isDisplaying = false");
         isDisplaying = false;
     }
 }

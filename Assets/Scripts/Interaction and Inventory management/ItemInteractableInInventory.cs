@@ -12,7 +12,7 @@ public abstract class ItemInteractableInInventory : MonoBehaviour
     [TextArea]
     [CanBeNull][SerializeField] protected string[] textLines;
     [SerializeField] protected float textDuration = 2f;
-    [SerializeField] protected bool isHint;
+    [SerializeField] protected bool isHint; //maybe delete
     public virtual void Awake()
     {
         gameObject.layer = 6;

@@ -6,9 +6,11 @@ public class ShowTextInteractable : InteractableScript
 {
     [TextArea]
     [SerializeField] protected string[] textLines;
+
+    [SerializeField] private float displayDuration;
     public override void OnInteract()
     {
-        TextManager.Instance.ShowTextSequence(textLines, false, 500f);
+        TextManager.Instance.ShowTextSequence(textLines, false, displayDuration);
     }
 
     public override void OnFocus()
@@ -19,6 +21,6 @@ public class ShowTextInteractable : InteractableScript
     public override void OnLoseFocus()
     {
         TextManager.Instance.StopSequence();
-        
+        TextManager.Instance.DisableIsDisplaying();
     }
 }

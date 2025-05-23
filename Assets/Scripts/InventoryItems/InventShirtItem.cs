@@ -7,6 +7,8 @@ public class InventShirtItem : ItemInteractableInInventory
 {
     public override void OnInteract()
     {
-        TextManager.Instance.ShowTextSequence(textLines, isHint, textDuration);
+        TextManager.Instance.ShowTextSequence(textLines, false, textDuration);
+        TextManager.Instance.DisableIsDisplaying();
+        
     }
 }
