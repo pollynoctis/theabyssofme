@@ -26,7 +26,7 @@ public class SaveSystem : MonoBehaviour
         {
             _instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
@@ -36,8 +36,8 @@ public class SaveSystem : MonoBehaviour
 
         if (File.Exists(flagPath))
         {
-            Debug.Log("Crash flag detected. Triggering corrupted save logic.");
-            HandleCorruptedSave(); // отдельный метод, см. ниже
+            //Debug.Log("Crash flag detected. Triggering corrupted save logic.");
+            //HandleCorruptedSave(); // отдельный метод, см. ниже
         }
         else
         {
@@ -99,8 +99,8 @@ public class SaveSystem : MonoBehaviour
     
     public void ClearSaveData()
     {
-        string filePath = Path.Combine(savePath, "save.txt");
-        File.WriteAllText(filePath, "Clean");
+        //string filePath = Path.Combine(savePath, "save.txt");
+        //File.WriteAllText(filePath, "Clean");
         //clear all player prefs as well
     }
 

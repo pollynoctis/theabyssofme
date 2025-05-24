@@ -8,7 +8,7 @@ public class ChangeText : MonoBehaviour
     [TextArea]
     [SerializeField] protected string[] textLines;
     [SerializeField] protected float textDuration = -1f;
-    protected bool playedOnce = false;
+    protected bool playedOnce;
 
     public bool isHint;
 

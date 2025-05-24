@@ -122,6 +122,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &14438295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 14438297}
+  - component: {fileID: 14438296}
+  m_Layer: 0
+  m_Name: SceneChanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &14438296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14438295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7011595a7b3d04d479022206972b4b94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &14438297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14438295}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -39.336178, y: -64.974174, z: -0.23779966}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &23794709
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextGameObject: {fileID: 194602377}
-  secondsPerLettter: 0.06
+  secondsPerLettter: 0.04
 --- !u!114 &194602377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,7 +925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentText: {fileID: 0}
   nextText: {fileID: 638248765}
-  displayDuration: 3.5
+  displayDuration: 2
 --- !u!1 &205481669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,7 +1305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextGameObject: {fileID: 324446087}
-  secondsPerLettter: 0.06
+  secondsPerLettter: 0.04
 --- !u!114 &324446087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1375,7 +1419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentText: {fileID: 0}
   nextText: {fileID: 888049035}
-  displayDuration: 15
+  displayDuration: 8
 --- !u!1 &361111392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,7 +1824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextGameObject: {fileID: 404621609}
-  secondsPerLettter: 0.06
+  secondsPerLettter: 0.04
 --- !u!114 &404621609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1894,7 +1938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentText: {fileID: 0}
   nextText: {fileID: 324446087}
-  displayDuration: 4.5
+  displayDuration: 3
 --- !u!1 &480150813
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,7 +2064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8531733, g: 0.05658687, b: 0, a: 0.5686275}
+  m_Color: {r: 0.8531733, g: 0.05658687, b: 0, a: 0.8117647}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2195,7 +2239,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1894411490}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
@@ -2361,8 +2405,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: -60}
-  m_SizeDelta: {x: 500, y: 200}
+  m_AnchoredPosition: {x: -155, y: -60}
+  m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &629916119
 MonoBehaviour:
@@ -2524,7 +2568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextGameObject: {fileID: 638248765}
-  secondsPerLettter: 0.06
+  secondsPerLettter: 0.04
 --- !u!114 &638248765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3642,7 +3686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentText: {fileID: 0}
   nextText: {fileID: 194602377}
-  displayDuration: 4.5
+  displayDuration: 3
 --- !u!114 &888049034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3656,7 +3700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextGameObject: {fileID: 888049035}
-  secondsPerLettter: 0.06
+  secondsPerLettter: 0.04
 --- !u!114 &888049035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4461,8 +4505,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -90}
-  m_SizeDelta: {x: 500, y: 200}
+  m_AnchoredPosition: {x: 154, y: -90}
+  m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1059937035
 MonoBehaviour:
@@ -4508,9 +4552,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1894411490}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: OpenIntro
+      - m_Target: {fileID: 1542633950}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: ClearSaveData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4520,9 +4564,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1542633950}
-        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: ClearSaveData
+      - m_Target: {fileID: 14438296}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: StartGameplay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5776,7 +5820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06583f599d42cf14eb9081a129f2ebfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  relatedObject: {fileID: 1836123389}
+  relatedObject: {fileID: 1006708838}
 --- !u!114 &1385243316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7844,7 +7888,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1894411489}
   - component: {fileID: 1894411488}
-  - component: {fileID: 1894411490}
   - component: {fileID: 1894411491}
   m_Layer: 0
   m_Name: GameManager
@@ -7880,18 +7923,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1894411490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1894411486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7011595a7b3d04d479022206972b4b94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1894411491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8754,6 +8785,7 @@ SceneRoots:
   - {fileID: 699689526}
   - {fileID: 1653005074}
   - {fileID: 1894411489}
+  - {fileID: 14438297}
   - {fileID: 1542633951}
   - {fileID: 5133976071882116123}
   - {fileID: 1262873353}

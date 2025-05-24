@@ -17,6 +17,7 @@ public class TogglePuzzleScreen : MonoBehaviour
         }
         else
         {
-            buttonToEnable.SetActive(true); }
+            buttonToEnable.SetActive(true); 
+        }
     }
 }

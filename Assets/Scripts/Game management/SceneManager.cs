@@ -13,11 +13,13 @@ public class SceneChanger : MonoBehaviour
     }
     public void OpenIntro()
     {
+        print("opening intro?");
         SceneManager.LoadScene("2-Intro");
     }
 
     public void StartGameplay()
     {
+        print("opening gameplay?");
         SceneManager.LoadScene("3-LabOne");
     }
 

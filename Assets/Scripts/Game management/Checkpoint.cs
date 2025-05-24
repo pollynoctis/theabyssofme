@@ -11,6 +11,7 @@ public class Checkpoint : ParentTriggerObject
     [SerializeField] private TMP_Text savingText;
     private string sceneName;
     private SaveSystem savesSys;
+    private bool playedOnce = true;
     private void Start()
     {
         savesSys = FindObjectOfType<SaveSystem>();
@@ -23,12 +24,18 @@ public class Checkpoint : ParentTriggerObject
     {
         if (other.CompareTag("Player"))
         {
+            if (playedOnce)
+            {
+                print("saving");
+                savingText.gameObject.SetActive(true);
+                playedOnce = false;
+                StartCoroutine(DisableSaving());
+            }
             savesSys.checkpointPosition = transform.position;
             sceneName = SceneManager.GetActiveScene().name;
             //Debug.Log("current scene name is: " + sceneName);
             savesSys.SaveCheckpoint(checkpointName, sceneName);
-            savingText.gameObject.SetActive(true);
-            StartCoroutine(DisableSaving());
+            
         }
     }
     private IEnumerator DisableSaving()

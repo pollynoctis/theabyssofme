@@ -5,7 +5,7 @@ using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
 
-public class TriggerObjectText : MonoBehaviour
+public class TriggerObjectText : ParentTriggerObject
 {
     //for lines AND sequences AND hints
     [TextArea]
