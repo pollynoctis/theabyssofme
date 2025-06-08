@@ -13,6 +13,8 @@ public class InventorySlotScript : MonoBehaviour
     {
         assignedItem = Instantiate(item, Vector3.zero, Quaternion.identity, transform);
         GetComponent<Image>().sprite = assignedItem.GetComponent<ItemInteractableInInventory>().itemSprite;
+        GetComponent<Image>().color = new Color(193f/255f, 193f/255f, 193f/255f);
+        
         //GetComponent<Image>().sprite = item.itemSprite;
     }
 

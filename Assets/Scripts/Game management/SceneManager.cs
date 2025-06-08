@@ -13,25 +13,35 @@ public class SceneChanger : MonoBehaviour
     }
     public void OpenIntro()
     {
-        print("opening intro?");
         SceneManager.LoadScene("2-Intro");
     }
 
     public void StartGameplay()
     {
-        print("opening gameplay?");
         SceneManager.LoadScene("3-LabOne");
     }
 
-    public void TestingLoad()
+    public void LabTwo()
     {
-        SceneManager.LoadScene("4-Testing");
+        SceneManager.LoadScene("4-LabTwo");
     }
-
-    public void ContinueTestingLoad()
+    public void HandCutting()
     {
-        SceneManager.LoadScene("5-Testing");
+        SceneManager.LoadScene("HandCut");
     }
+    public void Surgery()
+    {
+        SceneManager.LoadScene("Testing");
+    }
+    public void LabThree()
+    {
+        SceneManager.LoadScene("5-LabThree");
+    }
+    public void LabThreeAfterCrash()
+    {
+        SceneManager.LoadScene("CEMETERY COR");
+    }
+    
     public void Exit()
     {
         Application.Quit();

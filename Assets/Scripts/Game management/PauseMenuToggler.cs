@@ -5,21 +5,19 @@ using UnityEngine;
 public class PauseMenuToggler : MonoBehaviour
 {
     [SerializeField] private GameObject objectToEnable;
-    //[SerializeField] private GameObject player;
+    [SerializeField] private SimpleMovement playerMovement;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         { 
             objectToEnable.SetActive(!objectToEnable.activeSelf);
-            //player.SetActive(!player.activeSelf);
+            playerMovement.enabled = !playerMovement.enabled;
         }
     }
 
     public void ToggleMenu()
     {
         objectToEnable.SetActive(false);
-        //player.SetActive(false);
     }
-    
 }

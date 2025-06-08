@@ -68,6 +68,50 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!1 &3857059603216440936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8366168216104480443}
+  - component: {fileID: 2387665679183749594}
+  m_Layer: 0
+  m_Name: SceneChanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8366168216104480443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3857059603216440936}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8534087352720951241}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2387665679183749594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3857059603216440936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7011595a7b3d04d479022206972b4b94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4529482461716423894
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +143,7 @@ Transform:
   m_Children:
   - {fileID: 7185776724736208227}
   - {fileID: 1186194440406839115}
+  - {fileID: 8366168216104480443}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7462075509962351692
@@ -112,7 +157,6 @@ GameObject:
   - component: {fileID: 7185776724736208227}
   - component: {fileID: 7658102763191566883}
   - component: {fileID: 3379103307384642756}
-  - component: {fileID: 6541573242709130964}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -163,15 +207,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToDisable: {fileID: 0}
   playerMovement: {fileID: 0}
---- !u!114 &6541573242709130964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7462075509962351692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7011595a7b3d04d479022206972b4b94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

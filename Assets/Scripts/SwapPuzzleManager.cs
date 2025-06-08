@@ -11,6 +11,9 @@ public class SwapPuzzleManager : MonoBehaviour
     [SerializeField] private Image[] images;
     [SerializeField] private Sprite[] correctSpriteOrder;
 
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip finishSound;
+
     public void CheckSolution()
     {
         int i = 0;
@@ -20,6 +23,8 @@ public class SwapPuzzleManager : MonoBehaviour
                 return;
             i++;
         }
+        source.PlayOneShot(finishSound);
         print("PUZZLE SOLVED!!!1");
+        
     }
 }

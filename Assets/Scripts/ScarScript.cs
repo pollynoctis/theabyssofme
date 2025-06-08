@@ -15,7 +15,6 @@ public class ScarScript : MonoBehaviour
         if (puzzleManager.currentTool == requiredTool)
         {
             ExecuteCut();
-            
         }
         else
         {

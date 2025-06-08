@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,7 @@ public abstract class ItemInteractableInInventory : MonoBehaviour
     public virtual void Awake()
     {
         gameObject.layer = 6;
+        
     }
     public abstract void OnInteract();
 
