@@ -37,7 +37,7 @@ public class GameCrashPuzzleController : MonoBehaviour
         {
             _instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject); deleted because its not needed and unity is a lil bitch
     }
     
     public void StartCrash()

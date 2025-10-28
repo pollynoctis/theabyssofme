@@ -5,23 +5,23 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/1-MainMenu.unity
     guid: 42f3aadf0e178ec4cb63931573dfcaba
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/2-Intro.unity
     guid: f9982b84d6d24fd448bf460a9526f88b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/3-LabOne.unity
     guid: f883fd2d3a7fffd4db3ee4d297a73f5f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/4-LabTwo.unity
     guid: 74c4452c18f85e34bb8dee62e87d3128
   - enabled: 1
     path: Assets/Scenes/5-LabThree.unity
     guid: ba293580633909745b789ebd8e2993be
-  - enabled: 1
-    path: Assets/Scenes/Cemetery.unity
+  - enabled: 0
+    path: Assets/Scenes/Testing Scenes/Cemetery.unity
     guid: 10f96bd074632ec4296c56fdcce9d4ab
   - enabled: 1
     path: Assets/Scenes/CEMETERY COR.unity
@@ -29,10 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FakeScene.unity
     guid: 8587da8cbd6f5c049b548fb853818b75
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HandCut.unity
     guid: 4c94d215f93987f4fa3cc202b593a789
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing.unity
     guid: e0a442bb822156b45825624d94b8f796
+  - enabled: 0
+    path: Assets/Scenes/Testing Scenes/TestingEnding.unity
+    guid: 0929cd44b2b9fc646ba095b58b298a35
   m_configObjects: {}

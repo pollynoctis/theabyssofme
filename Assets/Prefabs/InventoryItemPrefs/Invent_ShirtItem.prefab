@@ -48,4 +48,4 @@ MonoBehaviour:
   textLines:
   - 'Milly: Please... No... I don''t want to look at it. It stinks...'
   textDuration: 6
-  isHint: 0
+  isHint: 1

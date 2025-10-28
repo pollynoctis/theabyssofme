@@ -6,6 +6,8 @@ public class PickUpInteractable : InteractableScript
 {
     //script, ko likt virsū itemam, ko var likt inventory
     [SerializeField] private GameObject pickUp;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip pickUpSound;
     private InventoryManager manager;
     private void Start()
     {
@@ -15,6 +17,7 @@ public class PickUpInteractable : InteractableScript
     {
         //Debug.Log("interacted");
         manager.AddItem(pickUp); 
+        source.PlayOneShot(pickUpSound);
         Destroy(gameObject);
         
     }

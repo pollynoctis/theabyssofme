@@ -13,7 +13,7 @@ public class ShowInteractable : InteractableScript
     }
     public override void OnInteract()
     {
-        objectToShow.SetActive(true);
+        objectToShow.SetActive(!objectToShow.activeSelf);
     }
 
     public override void OnFocus()

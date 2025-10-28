@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -16,14 +17,12 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(GameObject item)
     {
         items.Add(item);
-
         UpdateInventory();
     }
 
     public void RemoveItem(GameObject item)
     {
         items.Remove(item);
-
         UpdateInventory();
     }
 
@@ -43,6 +42,10 @@ public class InventoryManager : MonoBehaviour
             item.transform.position = new Vector3(0, 0, 0);
         }
     }
-    
-    
+
+    public void ClearAll()
+    {
+        items.Clear();
+        UpdateInventory();
+    }
 }

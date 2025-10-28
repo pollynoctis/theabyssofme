@@ -5,44 +5,39 @@ using UnityEngine;
 
 public class InventKey : ItemInteractableInInventory
 {
+    [SerializeField] private GameObject key;
+    private InventoryManager inventManager;
     private GameObject player;
     private GameObject lockedDoor;
     private GameObject houseOverlay;
-    //private GameObject unlockMessage;
     private PauseMenuToggler menuToggler;
+    
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
         houseOverlay = GameObject.Find("HouseOverlay");
         lockedDoor = GameObject.Find("HouseDoor");
-
-        /*unlockMessage = GameObject.Find("KeyUseMessage") ?? GameObject.Find("/KeyUseMessage");
-        if (unlockMessage == null)
-        {
-            unlockMessage = GameObject.FindObjectOfType<Canvas>().transform.Find("KeyUseMessage")?.gameObject;
-            print(unlockMessage.name);
-        }*/ //veca versija, lai parādās message
     }
 
     public override void OnInteract()
     {
-        print("key interacted");
-        menuToggler = FindObjectOfType<PauseMenuToggler>();
-        menuToggler.ToggleMenu(); //disable inventory visibility
-        
         Collider2D playerCollider = player.GetComponent<Collider2D>();
         Collider2D doorCollider = lockedDoor.GetComponent<Collider2D>();
+        inventManager = FindObjectOfType<InventoryManager>();
+        
         if (playerCollider.IsTouching(doorCollider))
         {
-            houseOverlay.SetActive(false); 
-            //Debug.Log("House unlocked!");
+            houseOverlay.SetActive(false);
+            inventManager.ClearAll();
         }
         else
         {
-            //unlockMessage.SetActive(true);
-            TextManager.Instance.ShowTextSequence(textLines, false, textDuration);
+            TextManager.Instance.ShowTextSequence(textLines, isHint, textDuration); //isHint instead of false
             TextManager.Instance.DisableIsDisplaying();
         }
+        menuToggler = FindObjectOfType<PauseMenuToggler>();
+        menuToggler.ToggleMenu();
+        player.GetComponent<SimpleMovement>().enabled = true;
     }
 }

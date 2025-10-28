@@ -6,13 +6,14 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class TriggerSceneChange : AutoSceneChange
 {
-    public override void OnSceneStart()
-    {
-        //print("trigger scene change script enabled");
-    }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
-        StartCoroutine(SecondsToSceneChange());
+        StartCoroutine(ChangeTheScene());
+    }
+
+    public override void OnSceneStart()
+    {
+        //do nothing
     }
 }

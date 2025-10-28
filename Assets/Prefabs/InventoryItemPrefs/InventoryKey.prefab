@@ -48,4 +48,5 @@ MonoBehaviour:
   textLines:
   - 'Milly: I can''t open my eyes with this, you know...'
   textDuration: 5
-  isHint: 0
+  isHint: 1
+  key: {fileID: 2206264856310339957}

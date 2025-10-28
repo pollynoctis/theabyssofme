@@ -14,7 +14,8 @@ public class GetPlayerUsername : MonoBehaviour
 
     private void Awake()
     {
-        textToShow.text = textForUsername + username + "...";
+        Debug.Log(username);
+        textToShow.text = textForUsername + username + "?";
     }
 
     

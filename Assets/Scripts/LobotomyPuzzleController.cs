@@ -41,7 +41,6 @@ public class LobotomyPuzzleController : MonoBehaviour
         objectToEnable.SetActive(true);
         gameObject.SetActive(false);
         
-        
         player.GetComponent<Rigidbody2D>().isKinematic = false;
         
         inventManager.RemoveItem(leuctome);
