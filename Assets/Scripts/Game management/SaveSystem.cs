@@ -63,7 +63,8 @@ public class SaveSystem : MonoBehaviour
     public void SaveCheckpoint(string checkpointName, string sceneName)
     {
         string filePath = Path.Combine(savePath, "save.txt");
-        File.WriteAllText(filePath, checkpointName + " " + checkpointPosition.x + " " + checkpointPosition.y + " " + sceneName);
+        File.WriteAllText(filePath, checkpointName + " " + checkpointPosition.x + " " + checkpointPosition.y 
+                                    + " " + sceneName);
     }
     
     public void LoadCheckpoint()
