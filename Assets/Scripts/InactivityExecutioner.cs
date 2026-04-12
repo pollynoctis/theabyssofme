@@ -7,7 +7,8 @@ public class InactivityExecutioner : InactivityManager
     protected override void InacitvityRelatedAction()
     {
         inactivityRelatedObject.SetActive(true);
-        
+        inactivityTime += 5;
+
     }
 }
 
