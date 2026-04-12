@@ -3815,7 +3815,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1586861324588347283, guid: 09f138bfe831dbf40b3bd10dd8dce712, type: 3}
+    - {fileID: 9122077592903310405, guid: 09f138bfe831dbf40b3bd10dd8dce712, type: 3}
+    - {fileID: 6496939517922172537, guid: 09f138bfe831dbf40b3bd10dd8dce712, type: 3}
+    - {fileID: 5903136396601020294, guid: 09f138bfe831dbf40b3bd10dd8dce712, type: 3}
+    - {fileID: 499737362723941998, guid: 09f138bfe831dbf40b3bd10dd8dce712, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1082410467525473065, guid: 09f138bfe831dbf40b3bd10dd8dce712, type: 3}
       insertIndex: 0
@@ -4462,10 +4467,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2124021159182655563, guid: 20bcda7e19dbc2f47bce8407fc588cd2, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: f4bdf92434a97c34f8020e50503982a4, type: 2}
     - target: {fileID: 2280514291785424763, guid: 20bcda7e19dbc2f47bce8407fc588cd2, type: 3}
       propertyPath: m_Name
       value: _______________AUDIO
       objectReference: {fileID: 0}
+    - target: {fileID: 3038505791570006630, guid: 20bcda7e19dbc2f47bce8407fc588cd2, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: f4bdf92434a97c34f8020e50503982a4, type: 2}
     - target: {fileID: 8753066247065172432, guid: 20bcda7e19dbc2f47bce8407fc588cd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10239,7 +10252,7 @@ PrefabInstance:
     - target: {fileID: 7289264122656548834, guid: 8ac3e1b8a91578840a68c48f5a929af7, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 2032272133}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39051,7 +39064,7 @@ PrefabInstance:
     - target: {fileID: 3379103307384642756, guid: 74469bb926b451c4b8c5be597ea1df80, type: 3}
       propertyPath: playerMovement
       value: 
-      objectReference: {fileID: 2032272134}
+      objectReference: {fileID: 0}
     - target: {fileID: 3379103307384642756, guid: 74469bb926b451c4b8c5be597ea1df80, type: 3}
       propertyPath: objectToDisable
       value: 
@@ -39116,6 +39129,14 @@ PrefabInstance:
     - target: {fileID: 1643446492515309016, guid: 1fa674c61d899d34cae65114acfedc83, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803068176670188646, guid: 1fa674c61d899d34cae65114acfedc83, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -37.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803068176670188646, guid: 1fa674c61d899d34cae65114acfedc83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 88.1
       objectReference: {fileID: 0}
     - target: {fileID: 4074149787022680343, guid: 1fa674c61d899d34cae65114acfedc83, type: 3}
       propertyPath: m_Name
@@ -39190,22 +39211,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fa674c61d899d34cae65114acfedc83, type: 3}
---- !u!4 &2032272133 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7636859212046335249, guid: 1fa674c61d899d34cae65114acfedc83, type: 3}
-  m_PrefabInstance: {fileID: 2032272132}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2032272134 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8447571149943074551, guid: 1fa674c61d899d34cae65114acfedc83, type: 3}
-  m_PrefabInstance: {fileID: 2032272132}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da0045040a26ee047bd8d569b1634601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2045245278
 GameObject:
   m_ObjectHideFlags: 0
@@ -43025,6 +43030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointPosition: {x: 0, y: 0}
+  isSaveCorrupted: 0
 --- !u!1 &3550221861504739893
 GameObject:
   m_ObjectHideFlags: 0
