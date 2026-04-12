@@ -42,6 +42,7 @@ public class GameCrashPuzzleController : MonoBehaviour
     
     public void StartCrash()
     {
+        SaveSystem.Instance.isSaveCorrupted = true;
         StartGlitchAndAnimation();
         StartCoroutine(WaitBefore(1f));
     }

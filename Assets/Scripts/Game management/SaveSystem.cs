@@ -10,6 +10,7 @@ using TMPro;
 public class SaveSystem : MonoBehaviour
 {
     public Vector2 checkpointPosition;
+    public bool isSaveCorrupted;
     [CanBeNull] private GameObject player;
     private string savePath;
     private string filePath;
@@ -104,22 +105,30 @@ public class SaveSystem : MonoBehaviour
         //File.WriteAllText(filePath, "Clean");
         //clear all player prefs as well
     }
-
-    private void HandleCorruptedSave()
+    
+    public void HandleCorruptedSave()
     {
-        string filePath = Path.Combine(savePath, "save.txt");
-        string saveContent = File.ReadAllText(filePath);
-
-        if (saveContent.Contains(GameCrashPuzzleController.solutionText.ToLower()) || saveContent.Contains(GameCrashPuzzleController.solutionTextTwo.ToLower()))
+        if (isSaveCorrupted)
         {
-            SceneManager.LoadScene("Cemetery");
+            string filePath = Path.Combine(savePath, "save.txt");
+            string saveContent = File.ReadAllText(filePath);
+
+            if (saveContent.Contains(GameCrashPuzzleController.solutionText.ToLower()) || saveContent.Contains(GameCrashPuzzleController.solutionTextTwo.ToLower()))
+            {
+                SceneManager.LoadScene("Cemetery");
+            }
+            else
+            {
+                // Запускай фальшивую сцену, глитчи или снова вылет
+                SceneManager.LoadScene("FakeScene");
+                GameCrashPuzzleController.Instance.SpamTxt();
+            }  
         }
         else
         {
-            // Запускай фальшивую сцену, глитчи или снова вылет
-            SceneManager.LoadScene("FakeScene");
-            GameCrashPuzzleController.Instance.SpamTxt();
+            LoadCheckpoint();
         }
+        
     }
 
     

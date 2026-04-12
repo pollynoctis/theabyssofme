@@ -108,7 +108,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: OB_shelf_full_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 373
+        width: 342
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a3204746b860a644bdc923b51c6b54e
+      internalID: -1805342880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OB_shelf_full_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 342
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae3f3367c00413543a409f301b7b4a93
+      internalID: -1333297920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +161,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      OB_shelf_full_0: -1805342880
+      OB_shelf_full_1: -1333297920
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
