@@ -14,7 +14,14 @@ public class Settings : MonoBehaviour
     [SerializeField] private Slider volumeSlider;
 
     private void Start()
-    {
+    {   // set fullscreen bool to initial game setting
+        fullscreen = Screen.fullScreenMode switch
+        {
+            FullScreenMode.FullScreenWindow => true,
+            FullScreenMode.Windowed => false,
+            _ => fullscreen
+        };
+        
         InitializeSettings();
     }
 
