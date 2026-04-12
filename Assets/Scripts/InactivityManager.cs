@@ -7,14 +7,14 @@ public abstract class InactivityManager : MonoBehaviour
     public GameObject inactivityRelatedObject;
     
     public float inactivityTime;
-    private float timer = 0f;
+    public float timer = 0f;
     
-    private Vector3 lastMousePosition;
+    // recently deleted !!!! private Vector3 lastMousePosition;
     private void Update()
     {
-        bool mouseMoved = lastMousePosition != Input.mousePosition;
-        lastMousePosition = Input.mousePosition;
-        bool isActive = Input.anyKey || mouseMoved || Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0;
+        //bool mouseMoved = lastMousePosition != Input.mousePosition;
+        // recently deleted !!!! lastMousePosition = Input.mousePosition;
+        bool isActive = Input.anyKey || /*mouseMoved ||*/ Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0;
 
         if (isActive)
         {
@@ -26,7 +26,7 @@ public abstract class InactivityManager : MonoBehaviour
             if (timer >= inactivityTime)
             {
                 InacitvityRelatedAction();
-                //ResetTimer();
+                ResetTimer();
             }
         }
     }

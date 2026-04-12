@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextGameObject: {fileID: 3017737933103245691}
-  textSpeed: 0.3
+  secondsPerLettter: 0.03
 --- !u!114 &5768787880176299400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1514,7 +1514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextGameObject: {fileID: 1949414823279480147}
-  textSpeed: 0.03
+  secondsPerLettter: 0.03
 --- !u!1 &6864772401476787963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,11 +2026,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1680371709182714929}
   - {fileID: 57744741128015681}
   - {fileID: 4719763476773097170}
   - {fileID: 7083622912306903620}
   - {fileID: 6021563930347392050}
+  - {fileID: 1680371709182714929}
   - {fileID: 3887011207923276738}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2115,6 +2115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToEnable: {fileID: 6386156689288301109}
+  playerMovement: {fileID: 0}
 --- !u!114 &2251555097484249635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2280,7 +2281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextGameObject: {fileID: 3402344692568583212}
-  textSpeed: 0.03
+  secondsPerLettter: 0.03
 --- !u!1 &8706293268371669039
 GameObject:
   m_ObjectHideFlags: 0
