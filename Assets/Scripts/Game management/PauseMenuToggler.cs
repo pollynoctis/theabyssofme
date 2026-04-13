@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,12 @@ using UnityEngine;
 public class PauseMenuToggler : MonoBehaviour
 {
     [SerializeField] private GameObject objectToEnable;
-    [SerializeField] private SimpleMovement playerMovement;
+    private SimpleMovement playerMovement;
+
+    private void Start()
+    {
+        playerMovement = FindObjectOfType<SimpleMovement>();
+    }
 
     void Update()
     {
