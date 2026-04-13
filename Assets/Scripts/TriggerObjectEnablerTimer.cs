@@ -7,10 +7,6 @@ public class TriggerObjectEnablerTimer : ParentTriggerObject
     [SerializeField] private GameObject objectToEnable;
     [SerializeField] private float waitingTime;
     private bool playedOnce;
-    private void Start()
-    {
-        objectToEnable.SetActive(false);
-    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         print("player here");

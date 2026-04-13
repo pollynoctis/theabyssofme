@@ -42,4 +42,6 @@ public class SetUserWallpaper : MonoBehaviour
         SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, tempImagePath, SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE);
         Debug.Log($"[WallpaperSetter] Обои установлены: {tempImagePath}");
     }
+
+    
 }
