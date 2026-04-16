@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ClickGameManager : MonoBehaviour
 {
@@ -9,23 +11,19 @@ public class ClickGameManager : MonoBehaviour
         public string sentence;          // The sentence to show
         public GameObject correctPoint;  // The finger the player must click
     }
-
     public Step[] steps;                // List of steps
     public TextMeshProUGUI sentenceText;  // The TextMeshProUGUI text on screen
     public GameObject blackScreen;      // The black screen to show when the player fails
-
     private int currentStep = 0;
     public TypewriterEffect typewriterEffect;
     public GameObject retryButton;
 
-
-
+    [SerializeField] private float secondsToWait;
     void Start()
     {
         blackScreen.SetActive(false);
         ShowStep();
     }
-
     void ShowStep()
     {
         if (currentStep < steps.Length)
@@ -37,9 +35,9 @@ public class ClickGameManager : MonoBehaviour
         {
             StopAllCoroutines();
             StartCoroutine(typewriterEffect.TypeText(sentenceText, "You did it"));
+            StartCoroutine(WaitBeforeSceneLoad());
         }
     }
-
     public void PointClicked(GameObject clickedPoint)
     {
         if (clickedPoint == steps[currentStep].correctPoint)
@@ -57,5 +55,9 @@ public class ClickGameManager : MonoBehaviour
         }
     }
 
-
+    private IEnumerator WaitBeforeSceneLoad()
+    {
+        yield return new WaitForSeconds(secondsToWait);
+        SceneManager.LoadScene("6-LabTwo");
+    }
 }

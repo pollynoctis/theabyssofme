@@ -25,6 +25,7 @@ public class ScarScript : MonoBehaviour
     private void ExecuteCut()
     {
         imageToEnable.SetActive(true);
+        GetComponent<Image>().enabled = false;
         symptomToEnable.SetActive(true);
         GetComponent<Button>().enabled = false;
     }

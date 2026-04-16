@@ -35,6 +35,8 @@ public class ToolScript : MonoBehaviour
             if (tool != this)
                 tool.IsAssigned = false;
         }
+        
+        Cursor.visible = false;
     }
 
     public void DeselectTools()
@@ -43,6 +45,8 @@ public class ToolScript : MonoBehaviour
         {
             tool.IsAssigned = false;
         }
+
+        Cursor.visible = true;
     }
 
     private void Update()

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class SwapPuzzleManager : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class SwapPuzzleManager : MonoBehaviour
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioClip finishSound;
 
+    [SerializeField] private float secondsToWait;
     public void CheckSolution()
     {
         int i = 0;
@@ -25,6 +28,11 @@ public class SwapPuzzleManager : MonoBehaviour
         }
         source.PlayOneShot(finishSound);
         print("PUZZLE SOLVED!!!1");
-        
+        StartCoroutine(WaitBeforeSceneLoad());
+    }
+    private IEnumerator WaitBeforeSceneLoad()
+    {
+        yield return new WaitForSeconds(secondsToWait);
+        SceneManager.LoadScene("8-AfterSurgery");
     }
 }
