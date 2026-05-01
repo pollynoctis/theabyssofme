@@ -6,6 +6,7 @@ public class InventCorpse : ItemInteractableInInventory
 {
     public override void OnInteract()
     {
+        print("waiting for game crash");
         GameCrashPuzzleController.Instance.StartCrash();
         print("game crash begins");
     }

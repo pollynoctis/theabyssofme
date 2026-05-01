@@ -6,7 +6,7 @@ public class ObjectSelfDisabler : MonoBehaviour
 {
     [SerializeField] private float timeBeforeDisable;
     
-    void Awake()
+    void OnEnable()
     {
         StartCoroutine(WaitBeforeDisable());
     }

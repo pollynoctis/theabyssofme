@@ -21,8 +21,8 @@ public class GameCrashPuzzleController : MonoBehaviour
     [SerializeField] private GameObject animObject;
     
     //______________puzzle related
-    public static string solutionText = "your casket 30 65 cemetery";
-    public static string solutionTextTwo = "your casket thirty sixty-five cemetery";
+    public static string solutionText = "believe";
+    public static string solutionTextTwo = "BELIEVE";
     
     //______________instance related
     private static GameCrashPuzzleController _instance;
@@ -67,32 +67,33 @@ public class GameCrashPuzzleController : MonoBehaviour
     }
     private void GenerateFilesDesktop()
     {
-    string desktopPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop), "TheInside");
+        string savePath = Path.Combine(Application.dataPath, "..", "Saves");
+    /*string desktopPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop), "TheInside");
     if (!Directory.Exists(desktopPath))
     {
         Directory.CreateDirectory(desktopPath);
-    }
+    }*/
 
     //________________________ TEXT FILES ________________________
     //________________________FILE 1
-    File.WriteAllText(Path.Combine(desktopPath, "last_breath.txt"),
+    /*File.WriteAllText(Path.Combine(savePath, "last_breath.txt"),
         "Base64 hides what you seek,\nDecode the chain to see what's unique.\n\n\n" +
         "VGhleSBmb2xkZWQgbWUgaW50byBZT1VSIENBU0tFVCwgc2tpbm5lZCBhbmQgcmF3LApGaW5nZXJ" +
         "zIHNuYXBwZWQgbGlrZSB0d2lncyBpbiB0aGF3LgpNeSBtb3V0aCBzZXduIHNodXQgd2l0aCBtb2" +
         "xkIGFuZCB0aHJlYWQsCkxlZnQgdG8gcm90LCBzdGlsbCB0d2l0Y2hpbmcsIHN0aWxsIGhhbGYtZ" +
         "GVhZC4KTXkgc3BpbmUgYmVudCBiYWNrd2FyZCBpbiB5b3VyIHNoYW1lLApBbmQgeW91IHN0aWxs" +
-        "IGRhcmUgdG8gd2hpc3BlciBteSBuYW1lLg==");
+        "IGRhcmUgdG8gd2hpc3BlciBteSBuYW1lLg==");*/
     //________________________FILE 2
-    File.WriteAllText(Path.Combine(desktopPath, "rot.txt"),
+   /* File.WriteAllText(Path.Combine(savePath, "rot.txt"),
         "Rot47 twists the path you take,\nShift the letters to see what’s at stake." +
         "\n\n\nx 4C2H=65 %wx#%* A246D E9C@F89 3:=6 2?5 CFDE[\n}2:=D A66=:?8 @77[ 3@?6D 8C@" +
         "F?5 E@ 5FDE]\nx 82DA65 $x)%*\\ux't E:>6D E9C@F89 5:CE 2?5 DA:E[\nq67@C6 >J =F?8D " +
         "82G6 FA — E96J BF:E]\n#6>6>36C E96D6 ?F>36CD[ 42CG65 :? D<:? —\n%96J 2C6 E96 >2C<" +
-        "6CD @7 H96C6 J@F 368:?]");
+        "6CD @7 H96C6 J@F 368:?]");*/
     //________________________FILE 3
-    File.WriteAllText(Path.Combine(desktopPath, "hint.txt"),
-        "If memory fails, listen to the breathing grave.\nIf sight deceives, " +
-        "bend the mirror.\nIf you forget yourself, the soil remembers.");
+    File.WriteAllText(Path.Combine(savePath, "hint.txt"),
+        "Sometimes...\nYou just have to BELIEVE in yourself." +
+        "At least try.");
 
     //________________________ IMAGE FILE ________________________
     //debugger.text = "Trying to load image from Resources...";
@@ -110,7 +111,7 @@ public class GameCrashPuzzleController : MonoBehaviour
         }
         try
         {
-            File.WriteAllBytes(Path.Combine(desktopPath, "light_in_the_mirror.png"), pngData);
+            File.WriteAllBytes(Path.Combine(savePath, "light_in_the_mirror.png"), pngData);
             debugger.text = "generated";
         }
         catch (Exception ex)
@@ -125,13 +126,13 @@ public class GameCrashPuzzleController : MonoBehaviour
     }
 
     //________________________ AUDIO FILE ________________________
-    string sourceAudioPath = Path.Combine(Application.streamingAssetsPath, "PuzzleMaterials/hollow_whisper.mp3");
-    string targetAudioPath = Path.Combine(desktopPath, "hollow_whisper.mp3");
-    File.Copy(sourceAudioPath, targetAudioPath, true);
+    /*string sourceAudioPath = Path.Combine(Application.streamingAssetsPath, "PuzzleMaterials/hollow_whisper.mp3");
+    string targetAudioPath = Path.Combine(savePath, "hollow_whisper.mp3");
+    File.Copy(sourceAudioPath, targetAudioPath, true);*/
 }
     private void SpamCmds()
     {
-        for (int i = 0; i < 7; i++) // logu daudzums
+        for (int i = 0; i < 5; i++) // logu daudzums
         {
             ProcessStartInfo psi = new ProcessStartInfo
             {
@@ -166,7 +167,7 @@ public class GameCrashPuzzleController : MonoBehaviour
         ShowSystemPopup();
         Application.Quit();
     }
-    public void SpamTxt()
+    /*public void SpamTxt()
     {
         string desktopPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
         for (int i = 0; i < 50; i++) 
@@ -174,5 +175,5 @@ public class GameCrashPuzzleController : MonoBehaviour
             string filePath = Path.Combine(desktopPath, $"lostchild_{i}.txt");
             File.WriteAllText(filePath, "She is disappointed.\nYou forgot her again.\n");
         }
-    }
+    }*/
 }

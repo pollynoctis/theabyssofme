@@ -121,7 +121,7 @@ public class SaveSystem : MonoBehaviour
             {
                 // Запускай фальшивую сцену, глитчи или снова вылет
                 SceneManager.LoadScene("FakeScene");
-                GameCrashPuzzleController.Instance.SpamTxt();
+                //GameCrashPuzzleController.Instance.SpamTxt();
             }  
         }
         else

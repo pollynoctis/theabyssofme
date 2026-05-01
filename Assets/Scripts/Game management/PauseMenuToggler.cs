@@ -18,7 +18,7 @@ public class PauseMenuToggler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         { 
             objectToEnable.SetActive(!objectToEnable.activeSelf);
-            playerMovement.enabled = !playerMovement.enabled;
+            //playerMovement.enabled = !playerMovement.enabled;
         }
     }
 
